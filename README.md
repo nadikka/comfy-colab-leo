@@ -23,6 +23,21 @@ Repo propio para correr **ComfyUI + Z-Image Turbo** en Colab (gratis, GPU T4) y 
 
 **Tus LoRAs:** ponelas a mano en `Drive/MyDrive/ComfyUI-Leo/models/loras/` y van a aparecer en comfyweb.
 
+## Alternativa free: Kaggle (`ComfyUI_Leo_Kaggle.ipynb`)
+
+Si te quedaste sin GPU free en Colab, usá la versión Kaggle (30 h/semana de GPU, gratis).
+
+**Una sola vez:** cuenta Kaggle con **teléfono verificado** (Settings → Phone Verification) para habilitar Internet + GPU.
+
+**Cada sesión:** abrí `ComfyUI_Leo_Kaggle.ipynb` en Kaggle → panel derecho: *Accelerator = GPU T4 x2*, *Internet = ON* → *Run all* → copiá la URL pública → pegala en comfyweb.
+
+**Contras vs Colab:**
+- **No monta Google Drive** → por defecto rebaja los modelos cada sesión (pero la red de Kaggle es rápida, pocos minutos). Para evitarlo: guardá los modelos como **Kaggle Dataset** y adjuntalo (ver la última celda del notebook).
+- Hay que **verificar el teléfono** (una vez).
+- Tope de **30 h/semana** de GPU.
+
+A favor: más horas que abrir otra cuenta Colab, y no depende del límite de tu cuenta Google.
+
 ## ¿Tengo que pagar? No.
 El free de Colab alcanza. Sus límites: se desconecta si lo dejás inactivo (~90 min), la sesión tiene tope, y la GPU no está 100% garantizada. Si eso te molesta, alternativas:
 - **Kaggle Notebooks** — gratis, GPU, 30 hs/semana (plan B si Colab te niega GPU).
