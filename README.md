@@ -47,21 +47,27 @@ El free de Colab alcanza. Sus límites: se desconecta si lo dejás inactivo (~90
 
 ## Túnel FIJO con tu dominio (URL que NO cambia)
 
-Por defecto el túnel (`pycloudflared`) da una URL nueva cada vez. Para una URL fija tipo
-`https://comfy.leoblumfeld.com`, configurá un **Cloudflare Named Tunnel** (gratis). Una sola vez:
+Por defecto el túnel (`pycloudflared`) da una URL nueva cada vez. Para una URL fija
+`https://comfy.leoblumfeld.com` ya está **todo configurado en Cloudflare** (2026-06-28):
 
-### A) Lado Cloudflare (en la web, una vez)
-1. Creá cuenta en https://dash.cloudflare.com (si no tenés).
-2. Agregá tu dominio `leoblumfeld.com` a Cloudflare (te va a pedir cambiar los **nameservers** en donde compraste el dominio). *Si el dominio lo usás en Vercel, podés igual manejar el DNS desde Cloudflare y apuntar Vercel con registros — o usar solo un subdominio `comfy.` para esto.*
-3. Andá a **Zero Trust → Networks → Tunnels → Create a tunnel** → tipo *Cloudflared*.
-4. Ponele un nombre (ej. `comfy-colab`) y **copiá el token** que te da (es largo, empieza con `eyJ...`).
-5. En el tunnel, **Public Hostname → Add**: subdominio `comfy`, dominio `leoblumfeld.com`, servicio `HTTP → localhost:8188`. Guardar.
+- Túnel **`comfy-leo`** (UUID `01c8bdfb-0647-4b3d-82bd-ece0b387178b`) creado por CLI.
+- DNS **`comfy.leoblumfeld.com` → CNAME al túnel** ya ruteado.
+- Credencial del túnel en la compu de Leo: `~/.cloudflared/01c8bdfb-...json` (**secreto**).
+- Verificado de punta a punta el 2026-06-28 (server local → dominio → 200 OK).
 
-### B) Lado Colab (una vez)
-1. En Colab, panel izquierdo → 🔑 **Secretos** → agregá `CF_TUNNEL_TOKEN` con el token del paso A4. Activá el acceso para el notebook.
-2. Reemplazá la **celda 4** del notebook por la versión "Túnel FIJO" (está al final del notebook, en la celda markdown opcional).
+### Lo único que falta: el secreto en Colab (una vez)
+1. En Colab, panel izquierdo → 🔑 **Secretos** → **+ Agregar secreto nuevo**.
+2. Nombre: `CF_TUNNEL_CRED`.
+3. Valor: el **contenido del JSON** de credencial (`~/.cloudflared/01c8bdfb-...json`).
+   ⚠️ Es secreto: va sólo en Colab Secrets, **nunca al repo**.
+4. Activá el toggle de *Acceso del notebook*.
 
-### Resultado
-Tu URL será siempre `https://comfy.leoblumfeld.com`. La pegás UNA vez en comfyweb y no la tocás más.
+La celda 4 del notebook ya detecta `CF_TUNNEL_CRED`: si está, levanta el túnel fijo
+(`cloudflared ... run --credentials-file comfy-leo`) y la URL es siempre
+`https://comfy.leoblumfeld.com`. Si NO está, cae al túnel random de respaldo (`pycloudflared`).
 
-> Alternativa más simple sin tocar DNS: **ngrok** con dominio estático gratis (`xxx.ngrok-free.app`). Estable pero no es tu dominio. Si te sirve, te armo esa variante.
+> Nota: el túnel `comfy-leo` es **distinto** del túnel `vera` (que rutea `n8n.leoblumfeld.com`).
+> No se pisan: cada uno corre en su lado (vera local, comfy-leo en Colab).
+>
+> Pendiente menor: el túnel fijo todavía **no se probó desde el Colab real** (falta cargar el
+> secreto y *Ejecutar todo*). La cadena Cloudflare+DNS sí quedó validada.
