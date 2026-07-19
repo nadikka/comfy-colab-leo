@@ -71,3 +71,48 @@ La celda 4 del notebook ya detecta `CF_TUNNEL_CRED`: si está, levanta el túnel
 >
 > Pendiente menor: el túnel fijo todavía **no se probó desde el Colab real** (falta cargar el
 > secreto y *Ejecutar todo*). La cadena Cloudflare+DNS sí quedó validada.
+
+---
+
+## Troubleshooting: `FileNotFoundError: extra_model_paths.yaml`
+
+Si la celda 4 tira ese error, la causa real casi siempre es que **la celda 2 no terminó** (se
+colgó o se cortó a mitad de camino), así que `/content/ComfyUI` todavía no existe. Pasó el
+2026-07-11: un custom node (`ComfyUI_Simple_Qwen3-VL-gguf`) pedía `llama-cpp-python>=0.3.17` sin
+wheel precompilado, y el `pip install -r requirements.txt` genérico lo compilaba desde cero
+(C++/CUDA) colgando la sesión de Colab.
+
+**Fix aplicado (commit `8a8bfa9`):**
+- `llama-cpp-python` se filtra del install genérico de requirements de custom nodes; un
+  instalador dedicado busca wheel precompilado (CUDA cu128/cp312/linux) y si no lo encuentra,
+  **saltea el nodo Qwen-VL** en vez de compilar y colgar.
+- La celda 4 ahora chequea `os.path.isfile('/content/ComfyUI/main.py')` antes de escribir el
+  yaml; si falta, tira un `RuntimeError` claro ("volvé a correr la celda 2") en vez del error
+  críptico.
+
+**Si vuelve a pasar con un custom node nuevo:** revisar si trae una dependencia pesada sin wheel
+(CUDA/C++) y filtrarla igual que se hizo con `llama-cpp-python`, no dejarla pasar por el pip
+genérico.
+
+---
+
+## Troubleshooting: `AssertionError: Torch not compiled with CUDA enabled`
+
+Si la celda 4 (o el arranque de `main.py`) tira ese traceback al importar
+`comfy.model_management` — pasó el 2026-07-19 — la causa **no es un bug del notebook**: es que
+el *entorno de ejecución* de Colab de esa sesión es CPU, no GPU T4. El notebook no fuerza ninguna
+build de torch (el `requirements.txt` de ComfyUI pide `torch` sin pin de versión, así que nunca
+reinstala el que Colab ya trae preinstalado); si ese torch preinstalado es la build CPU-only, es
+porque la VM conectada es CPU.
+
+**Fix (a mano en la UI de Colab, no hay nada para pushear del lado del código):**
+1. *Entorno de ejecución → Cambiar tipo de entorno de ejecución → GPU (T4) → Guardar.*
+2. *Entorno de ejecución → Ejecutar todo* de nuevo.
+3. Si ya tenías T4 elegido y sigue fallando: probablemente se agotó la cuota gratis de GPU de tu
+   cuenta por hoy (se resetea con el tiempo). Alternativa sin esperar: `ComfyUI_Leo_Kaggle.ipynb`
+   (mismo repo, otra cuota de GPU T4 gratis).
+
+**Mitigación agregada al notebook (2026-07-19):** nueva celda 0 (`Chequeo de GPU`), primera
+celda ejecutable del notebook, corre `nvidia-smi` y si falla tira un `RuntimeError` con estas
+mismas instrucciones — así el error aparece en segundos en vez de varios minutos después (clonado
++ pip installs) con un traceback críptico.
