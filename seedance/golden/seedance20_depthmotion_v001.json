@@ -1,0 +1,1347 @@
+{
+  "config": {},
+  "definitions": {
+    "subgraphs": [
+      {
+        "config": {},
+        "extra": {},
+        "groups": [],
+        "id": "4871bd59-7f4e-475a-a872-bf5457365402",
+        "inputNode": {
+          "bounding": [
+            11.5196073247522,
+            4268.563694295093,
+            234.8203125,
+            128
+          ],
+          "id": -10
+        },
+        "inputs": [
+          {
+            "id": "1cf588c6-4614-48b4-8596-e484f3b36a52",
+            "linkIds": [
+              11
+            ],
+            "localized_name": "image",
+            "name": "image",
+            "pos": [
+              222.3399198247522,
+              4292.563694295093
+            ],
+            "type": "IMAGE"
+          },
+          {
+            "id": "a17ed30f-22b1-479a-87d8-fa5d9ae0f3e2",
+            "linkIds": [
+              4,
+              15,
+              19
+            ],
+            "localized_name": "audio",
+            "name": "audio",
+            "pos": [
+              222.3399198247522,
+              4312.563694295093
+            ],
+            "shape": 7,
+            "type": "AUDIO"
+          },
+          {
+            "id": "fa93ca5e-e75b-449b-bef5-a88a0e041efa",
+            "linkIds": [
+              5
+            ],
+            "localized_name": "video_info",
+            "name": "video_info",
+            "pos": [
+              222.3399198247522,
+              4332.563694295093
+            ],
+            "type": "VHS_VIDEOINFO"
+          },
+          {
+            "id": "daffdb6e-d293-452a-9fd1-ef984ebad346",
+            "linkIds": [
+              26
+            ],
+            "name": "model.reference_images.image_1",
+            "pos": [
+              222.3399198247522,
+              4352.563694295093
+            ],
+            "type": "IMAGE"
+          }
+        ],
+        "links": [
+          {
+            "id": 7,
+            "origin_id": 7,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 8,
+            "type": "VIDEO"
+          },
+          {
+            "id": 2,
+            "origin_id": 6,
+            "origin_slot": 0,
+            "target_id": 7,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 6,
+            "origin_id": 9,
+            "origin_slot": 0,
+            "target_id": 7,
+            "target_slot": 2,
+            "type": "FLOAT"
+          },
+          {
+            "id": 16,
+            "origin_id": 6,
+            "origin_slot": 0,
+            "target_id": 14,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 14,
+            "origin_id": 9,
+            "origin_slot": 0,
+            "target_id": 14,
+            "target_slot": 4,
+            "type": "FLOAT"
+          },
+          {
+            "id": 17,
+            "origin_id": 3,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 0,
+            "type": "VIDEO"
+          },
+          {
+            "id": 18,
+            "origin_id": 15,
+            "origin_slot": 0,
+            "target_id": 16,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 20,
+            "origin_id": 15,
+            "origin_slot": 2,
+            "target_id": 16,
+            "target_slot": 2,
+            "type": "FLOAT"
+          },
+          {
+            "id": 11,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 6,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 4,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 7,
+            "target_slot": 1,
+            "type": "AUDIO"
+          },
+          {
+            "id": 15,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 14,
+            "target_slot": 1,
+            "type": "AUDIO"
+          },
+          {
+            "id": 19,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 16,
+            "target_slot": 1,
+            "type": "AUDIO"
+          },
+          {
+            "id": 5,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 9,
+            "target_slot": 0,
+            "type": "VHS_VIDEOINFO"
+          },
+          {
+            "id": 21,
+            "origin_id": 16,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "VIDEO"
+          },
+          {
+            "id": 26,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 3,
+            "target_slot": 6,
+            "type": "IMAGE"
+          }
+        ],
+        "name": "Seedance 2.0 Depth Dancer",
+        "nodes": [
+          {
+            "bgcolor": "#653",
+            "color": "#432",
+            "flags": {},
+            "id": 3,
+            "inputs": [
+              {
+                "link": null,
+                "localized_name": "model",
+                "name": "model",
+                "type": "COMFY_DYNAMICCOMBO_V3",
+                "widget": {
+                  "name": "model"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "prompt",
+                "name": "model.prompt",
+                "type": "STRING",
+                "widget": {
+                  "name": "model.prompt"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "resolution",
+                "name": "model.resolution",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model.resolution"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "ratio",
+                "name": "model.ratio",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model.ratio"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "duration",
+                "name": "model.duration",
+                "type": "INT",
+                "widget": {
+                  "name": "model.duration"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "generate_audio",
+                "name": "model.generate_audio",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "model.generate_audio"
+                }
+              },
+              {
+                "label": "image_1",
+                "link": 26,
+                "localized_name": "model.reference_images.image_1",
+                "name": "model.reference_images.image_1",
+                "shape": 7,
+                "type": "IMAGE"
+              },
+              {
+                "label": "image_2",
+                "link": null,
+                "localized_name": "model.reference_images.image_2",
+                "name": "model.reference_images.image_2",
+                "shape": 7,
+                "type": "IMAGE"
+              },
+              {
+                "label": "video_1",
+                "link": 7,
+                "localized_name": "model.reference_videos.video_1",
+                "name": "model.reference_videos.video_1",
+                "shape": 7,
+                "type": "VIDEO"
+              },
+              {
+                "label": "video_2",
+                "link": null,
+                "localized_name": "model.reference_videos.video_2",
+                "name": "model.reference_videos.video_2",
+                "shape": 7,
+                "type": "VIDEO"
+              },
+              {
+                "label": "audio_1",
+                "link": null,
+                "localized_name": "model.reference_audios.audio_1",
+                "name": "model.reference_audios.audio_1",
+                "shape": 7,
+                "type": "AUDIO"
+              },
+              {
+                "label": "asset_1",
+                "link": null,
+                "localized_name": "model.reference_assets.asset_1",
+                "name": "model.reference_assets.asset_1",
+                "shape": 7,
+                "type": "STRING"
+              },
+              {
+                "link": null,
+                "localized_name": "auto_downscale",
+                "name": "model.auto_downscale",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "model.auto_downscale"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "auto_upscale",
+                "name": "model.auto_upscale",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "model.auto_upscale"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "watermark",
+                "name": "watermark",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "watermark"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 0,
+            "outputs": [
+              {
+                "links": [
+                  17
+                ],
+                "localized_name": "VIDEO",
+                "name": "VIDEO",
+                "type": "VIDEO"
+              }
+            ],
+            "pos": [
+              833.600370601361,
+              4039.012800364579
+            ],
+            "properties": {
+              "Node name for S&R": "ByteDance2ReferenceNode"
+            },
+            "size": [
+              400,
+              428
+            ],
+            "type": "ByteDance2ReferenceNode",
+            "widgets_values": [
+              "Seedance 2.0",
+              "dance",
+              "720p",
+              "adaptive",
+              5,
+              true,
+              true,
+              false,
+              601585036,
+              "randomize",
+              false
+            ]
+          },
+          {
+            "flags": {},
+            "id": 6,
+            "inputs": [
+              {
+                "link": 11,
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE"
+              },
+              {
+                "link": null,
+                "localized_name": "ckpt_name",
+                "name": "ckpt_name",
+                "shape": 7,
+                "type": "COMBO",
+                "widget": {
+                  "name": "ckpt_name"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "resolution",
+                "name": "resolution",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "resolution"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 1,
+            "outputs": [
+              {
+                "links": [
+                  2,
+                  16
+                ],
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE"
+              }
+            ],
+            "pos": [
+              210,
+              4040
+            ],
+            "properties": {
+              "Node name for S&R": "DepthAnythingV2Preprocessor"
+            },
+            "size": [
+              290.828125,
+              136
+            ],
+            "type": "DepthAnythingV2Preprocessor",
+            "widgets_values": [
+              "depth_anything_v2_vitl.pth",
+              512
+            ]
+          },
+          {
+            "flags": {},
+            "id": 7,
+            "inputs": [
+              {
+                "link": 2,
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE"
+              },
+              {
+                "link": 4,
+                "localized_name": "audio",
+                "name": "audio",
+                "shape": 7,
+                "type": "AUDIO"
+              },
+              {
+                "link": 6,
+                "localized_name": "fps",
+                "name": "fps",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "fps"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "bit_depth",
+                "name": "bit_depth",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "bit_depth"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 2,
+            "outputs": [
+              {
+                "links": [
+                  7
+                ],
+                "localized_name": "VIDEO",
+                "name": "VIDEO",
+                "type": "VIDEO"
+              }
+            ],
+            "pos": [
+              530,
+              4040
+            ],
+            "properties": {
+              "Node name for S&R": "CreateVideo"
+            },
+            "size": [
+              270,
+              136
+            ],
+            "type": "CreateVideo",
+            "widgets_values": [
+              30,
+              8
+            ]
+          },
+          {
+            "flags": {},
+            "id": 9,
+            "inputs": [
+              {
+                "link": 5,
+                "localized_name": "video_info",
+                "name": "video_info",
+                "type": "VHS_VIDEOINFO"
+              }
+            ],
+            "mode": 0,
+            "order": 3,
+            "outputs": [
+              {
+                "links": [
+                  6,
+                  14
+                ],
+                "localized_name": "source_fps🟨",
+                "name": "source_fps🟨",
+                "type": "FLOAT"
+              },
+              {
+                "links": null,
+                "localized_name": "source_frame_count🟨",
+                "name": "source_frame_count🟨",
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "localized_name": "source_duration🟨",
+                "name": "source_duration🟨",
+                "type": "FLOAT"
+              },
+              {
+                "links": null,
+                "localized_name": "source_width🟨",
+                "name": "source_width🟨",
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "localized_name": "source_height🟨",
+                "name": "source_height🟨",
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "localized_name": "loaded_fps🟦",
+                "name": "loaded_fps🟦",
+                "type": "FLOAT"
+              },
+              {
+                "links": null,
+                "localized_name": "loaded_frame_count🟦",
+                "name": "loaded_frame_count🟦",
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "localized_name": "loaded_duration🟦",
+                "name": "loaded_duration🟦",
+                "type": "FLOAT"
+              },
+              {
+                "links": null,
+                "localized_name": "loaded_width🟦",
+                "name": "loaded_width🟦",
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "localized_name": "loaded_height🟦",
+                "name": "loaded_height🟦",
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              199.5196073247522,
+              3709.8773885901865
+            ],
+            "properties": {
+              "Node name for S&R": "VHS_VideoInfo"
+            },
+            "size": [
+              297.765625,
+              288
+            ],
+            "type": "VHS_VideoInfo",
+            "widgets_values": {}
+          },
+          {
+            "flags": {},
+            "id": 14,
+            "inputs": [
+              {
+                "link": 16,
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE"
+              },
+              {
+                "link": 15,
+                "localized_name": "audio",
+                "name": "audio",
+                "shape": 7,
+                "type": "AUDIO"
+              },
+              {
+                "link": null,
+                "localized_name": "meta_batch",
+                "name": "meta_batch",
+                "shape": 7,
+                "type": "VHS_BatchManager"
+              },
+              {
+                "link": null,
+                "localized_name": "vae",
+                "name": "vae",
+                "shape": 7,
+                "type": "VAE"
+              },
+              {
+                "link": 14,
+                "localized_name": "frame_rate",
+                "name": "frame_rate",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "frame_rate"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "loop_count",
+                "name": "loop_count",
+                "type": "INT",
+                "widget": {
+                  "name": "loop_count"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "filename_prefix",
+                "name": "filename_prefix",
+                "type": "STRING",
+                "widget": {
+                  "name": "filename_prefix"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "format",
+                "name": "format",
+                "type": "COMBO",
+                "widget": {
+                  "name": "format"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "pingpong",
+                "name": "pingpong",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "pingpong"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "save_output",
+                "name": "save_output",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "save_output"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 4,
+            "outputs": [
+              {
+                "links": null,
+                "localized_name": "Filenames",
+                "name": "Filenames",
+                "type": "VHS_FILENAMES"
+              }
+            ],
+            "pos": [
+              288.8719216960461,
+              4282.231530788415
+            ],
+            "properties": {
+              "Node name for S&R": "VHS_VideoCombine"
+            },
+            "size": [
+              274.828125,
+              238
+            ],
+            "type": "VHS_VideoCombine",
+            "widgets_values": {
+              "filename_prefix": "AnimateDiff",
+              "format": "image/gif",
+              "frame_rate": 8,
+              "loop_count": 0,
+              "pingpong": false,
+              "save_output": false,
+              "videopreview": {
+                "hidden": false,
+                "params": {
+                  "filename": "90df515c97c8c0963aef04ab8fb747ffff26752ca42382d932ac92f9c9a39595.gif",
+                  "format": "image/gif",
+                  "frame_rate": 24,
+                  "fullpath": "",
+                  "id": "5a006e30-811e-43aa-979c-e25d81703507",
+                  "subfolder": "",
+                  "type": "temp",
+                  "workflow": "AnimateDiff_00001.png"
+                },
+                "paused": false
+              }
+            }
+          },
+          {
+            "flags": {},
+            "id": 15,
+            "inputs": [
+              {
+                "link": 17,
+                "localized_name": "video",
+                "name": "video",
+                "type": "VIDEO"
+              }
+            ],
+            "mode": 0,
+            "order": 5,
+            "outputs": [
+              {
+                "links": [
+                  18
+                ],
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE"
+              },
+              {
+                "links": null,
+                "localized_name": "audio",
+                "name": "audio",
+                "type": "AUDIO"
+              },
+              {
+                "links": [
+                  20
+                ],
+                "localized_name": "fps",
+                "name": "fps",
+                "type": "FLOAT"
+              },
+              {
+                "links": null,
+                "localized_name": "bit_depth",
+                "name": "bit_depth",
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1005.2871754524052,
+              3865.2378227594563
+            ],
+            "properties": {
+              "Node name for S&R": "GetVideoComponents"
+            },
+            "size": [
+              225,
+              120
+            ],
+            "type": "GetVideoComponents",
+            "widgets_values": []
+          },
+          {
+            "flags": {},
+            "id": 16,
+            "inputs": [
+              {
+                "link": 18,
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE"
+              },
+              {
+                "link": 19,
+                "localized_name": "audio",
+                "name": "audio",
+                "shape": 7,
+                "type": "AUDIO"
+              },
+              {
+                "link": 20,
+                "localized_name": "fps",
+                "name": "fps",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "fps"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "bit_depth",
+                "name": "bit_depth",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "bit_depth"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 6,
+            "outputs": [
+              {
+                "links": [
+                  21
+                ],
+                "localized_name": "VIDEO",
+                "name": "VIDEO",
+                "type": "VIDEO"
+              }
+            ],
+            "pos": [
+              1270,
+              3850
+            ],
+            "properties": {
+              "Node name for S&R": "CreateVideo"
+            },
+            "size": [
+              270,
+              136
+            ],
+            "type": "CreateVideo",
+            "widgets_values": [
+              30,
+              8
+            ]
+          }
+        ],
+        "outputNode": {
+          "bounding": [
+            1600,
+            4288.563694295093,
+            128,
+            68
+          ],
+          "id": -20
+        },
+        "outputs": [
+          {
+            "id": "aa8f7501-7e44-4be0-b80b-bd4a65595e78",
+            "linkIds": [
+              21
+            ],
+            "localized_name": "VIDEO",
+            "name": "VIDEO",
+            "pos": [
+              1624,
+              4312.563694295093
+            ],
+            "type": "VIDEO"
+          }
+        ],
+        "revision": 0,
+        "state": {
+          "lastGroupId": 0,
+          "lastLinkId": 27,
+          "lastNodeId": 19,
+          "lastRerouteId": 0
+        },
+        "version": 1,
+        "widgets": []
+      }
+    ]
+  },
+  "extra": {
+    "VHS_KeepIntermediate": true,
+    "VHS_MetadataImage": true,
+    "VHS_latentpreview": true,
+    "VHS_latentpreviewrate": 0,
+    "ds": {
+      "offset": [
+        1014.9156283474019,
+        -3750.49616923191
+      ],
+      "scale": 1.087721184504477
+    },
+    "frontendVersion": "1.45.15"
+  },
+  "groups": [],
+  "id": "5105aa54-3efd-4e29-8179-734f200f7b48",
+  "last_link_id": 27,
+  "last_node_id": 19,
+  "links": [
+    [
+      22,
+      8,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ],
+    [
+      23,
+      8,
+      2,
+      17,
+      1,
+      "AUDIO"
+    ],
+    [
+      24,
+      8,
+      3,
+      17,
+      2,
+      "VHS_VIDEOINFO"
+    ],
+    [
+      25,
+      17,
+      0,
+      13,
+      0,
+      "VIDEO"
+    ],
+    [
+      27,
+      18,
+      0,
+      17,
+      3,
+      "IMAGE"
+    ]
+  ],
+  "nodes": [
+    {
+      "flags": {},
+      "id": 8,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "meta_batch",
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager"
+        },
+        {
+          "link": null,
+          "localized_name": "vae",
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE"
+        },
+        {
+          "link": null,
+          "localized_name": "video",
+          "name": "video",
+          "type": "COMBO",
+          "widget": {
+            "name": "video"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "force_rate",
+          "name": "force_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "force_rate"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "custom_width",
+          "name": "custom_width",
+          "type": "INT",
+          "widget": {
+            "name": "custom_width"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "custom_height",
+          "name": "custom_height",
+          "type": "INT",
+          "widget": {
+            "name": "custom_height"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "frame_load_cap",
+          "name": "frame_load_cap",
+          "type": "INT",
+          "widget": {
+            "name": "frame_load_cap"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "skip_first_frames",
+          "name": "skip_first_frames",
+          "type": "INT",
+          "widget": {
+            "name": "skip_first_frames"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "select_every_nth",
+          "name": "select_every_nth",
+          "type": "INT",
+          "widget": {
+            "name": "select_every_nth"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            22
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "frame_count",
+          "name": "frame_count",
+          "type": "INT"
+        },
+        {
+          "links": [
+            23
+          ],
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO"
+        },
+        {
+          "links": [
+            24
+          ],
+          "localized_name": "video_info",
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO"
+        }
+      ],
+      "pos": [
+        -400,
+        3940
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "size": [
+        292.59375,
+        886.9375
+      ],
+      "title": "Reference Video",
+      "type": "VHS_LoadVideo",
+      "widgets_values": {
+        "custom_height": 0,
+        "custom_width": 0,
+        "force_rate": 0,
+        "format": "AnimateDiff",
+        "frame_load_cap": 0,
+        "select_every_nth": 1,
+        "skip_first_frames": 0,
+        "video": "428a876d0db6827eadbb40514d92428a2025a12dc90cd49a5b399805f93f734a.mp4",
+        "videopreview": {
+          "hidden": false,
+          "params": {
+            "custom_height": 0,
+            "custom_width": 0,
+            "filename": "428a876d0db6827eadbb40514d92428a2025a12dc90cd49a5b399805f93f734a.mp4",
+            "force_rate": 0,
+            "format": "video/mp4",
+            "frame_load_cap": 0,
+            "select_every_nth": 1,
+            "skip_first_frames": 0,
+            "type": "input"
+          },
+          "paused": false
+        }
+      }
+    },
+    {
+      "flags": {},
+      "id": 13,
+      "inputs": [
+        {
+          "link": 25,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 4,
+      "outputs": [
+        {
+          "links": null,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        690,
+        3940
+      ],
+      "properties": {},
+      "size": [
+        300.875,
+        686.875
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 17,
+      "inputs": [
+        {
+          "link": 22,
+          "localized_name": "image",
+          "name": "image",
+          "type": "IMAGE"
+        },
+        {
+          "link": 23,
+          "localized_name": "audio",
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "link": 24,
+          "localized_name": "video_info",
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO"
+        },
+        {
+          "link": 27,
+          "name": "model.reference_images.image_1",
+          "shape": 7,
+          "type": "IMAGE"
+        }
+      ],
+      "mode": 0,
+      "order": 3,
+      "outputs": [
+        {
+          "links": [
+            25
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        240,
+        3940
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "3",
+            "model.resolution"
+          ],
+          [
+            "3",
+            "model.prompt"
+          ],
+          [
+            "3",
+            "model.ratio"
+          ],
+          [
+            "3",
+            "model.duration"
+          ],
+          [
+            "3",
+            "model.generate_audio"
+          ]
+        ]
+      },
+      "size": [
+        422.046875,
+        341
+      ],
+      "type": "4871bd59-7f4e-475a-a872-bf5457365402",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 18,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            27
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -80,
+        3940
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        283.859375,
+        621.671875
+      ],
+      "title": "Reference Image",
+      "type": "LoadImage",
+      "widgets_values": [
+        "27b2a4f68d1449329a6fab3f4606575276d3e8e498051d39a2cedf5e0c88e148.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 19,
+      "inputs": [],
+      "mode": 0,
+      "order": 2,
+      "outputs": [],
+      "pos": [
+        -810,
+        3940
+      ],
+      "properties": {},
+      "size": [
+        376.34375,
+        210.34375
+      ],
+      "title": "Seedance 2.0 Reference Video to Video (Depth)",
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "1. Reference Video -> Convert to Depth Map\n2. Depth Map -> Seedance 2.0 (Reference Video)\n3. Add Reference Image\n4. Set Duration / Resolution / Aspect\n5. Pass Audio from Reference Video -> Final\n6. Hit Run"
+      ]
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

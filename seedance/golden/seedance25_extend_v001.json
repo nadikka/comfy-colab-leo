@@ -1,0 +1,1827 @@
+{
+  "config": {},
+  "definitions": {
+    "subgraphs": [
+      {
+        "config": {},
+        "description": "Concatenates two videos end-to-end with optional resize, letterbox padding, and audio merge or drop.",
+        "extra": {},
+        "groups": [
+          {
+            "bounding": [
+              -1000,
+              820,
+              915,
+              496
+            ],
+            "color": "#3f789e",
+            "flags": {},
+            "id": 1,
+            "title": "Audio"
+          }
+        ],
+        "id": "d9aa59a4-3784-4796-9f1b-5b467fb41fa1",
+        "inputNode": {
+          "bounding": [
+            -1990,
+            700,
+            152.5546875,
+            168
+          ],
+          "id": -10
+        },
+        "inputs": [
+          {
+            "id": "2fb09e41-c5fa-4654-b9d2-569b59626ec4",
+            "label": "base_video",
+            "linkIds": [
+              50
+            ],
+            "localized_name": "clip_to_resize",
+            "name": "clip_to_resize",
+            "pos": [
+              -1861.4453125,
+              724
+            ],
+            "type": "VIDEO"
+          },
+          {
+            "id": "017f8d09-7900-4dc9-b95c-0cab31bcde7d",
+            "label": "second_video",
+            "linkIds": [
+              51
+            ],
+            "localized_name": "base_video",
+            "name": "base_video",
+            "pos": [
+              -1861.4453125,
+              744
+            ],
+            "type": "VIDEO"
+          },
+          {
+            "id": "a39894ce-1785-4037-b39c-b40d2e470c43",
+            "label": "pad_second_video",
+            "linkIds": [
+              59
+            ],
+            "localized_name": "pad_second_video",
+            "name": "pad_second_video",
+            "pos": [
+              -1861.4453125,
+              764
+            ],
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "b4fb86cb-8d87-4193-8533-88a57df50e18",
+            "linkIds": [
+              60
+            ],
+            "name": "interpolation",
+            "pos": [
+              -1861.4453125,
+              784
+            ],
+            "type": "COMBO"
+          },
+          {
+            "id": "2413a2e2-cfdc-4d1d-9e2e-81e7acdf35e3",
+            "linkIds": [
+              62
+            ],
+            "name": "padding_color",
+            "pos": [
+              -1861.4453125,
+              804
+            ],
+            "type": "COMBO"
+          },
+          {
+            "id": "338b1e09-0efb-424f-949b-e730a0aa8527",
+            "label": "drop_audio",
+            "linkIds": [
+              63
+            ],
+            "localized_name": "drop_audio",
+            "name": "drop_audio",
+            "pos": [
+              -1861.4453125,
+              824
+            ],
+            "type": "BOOLEAN"
+          }
+        ],
+        "links": [
+          {
+            "id": 22,
+            "origin_id": 10,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 1,
+            "type": "AUDIO"
+          },
+          {
+            "id": 14,
+            "origin_id": 11,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 2,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 39,
+            "origin_id": 2,
+            "origin_slot": 0,
+            "target_id": 6,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 4,
+            "origin_id": 7,
+            "origin_slot": 0,
+            "target_id": 6,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 5,
+            "origin_id": 7,
+            "origin_slot": 1,
+            "target_id": 6,
+            "target_slot": 2,
+            "type": "INT"
+          },
+          {
+            "id": 3,
+            "origin_id": 1,
+            "origin_slot": 0,
+            "target_id": 7,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 17,
+            "origin_id": 1,
+            "origin_slot": 0,
+            "target_id": 13,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 19,
+            "origin_id": 13,
+            "origin_slot": 0,
+            "target_id": 8,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 12,
+            "origin_id": 3,
+            "origin_slot": 0,
+            "target_id": 8,
+            "target_slot": 1,
+            "type": "AUDIO"
+          },
+          {
+            "id": 15,
+            "origin_id": 1,
+            "origin_slot": 2,
+            "target_id": 8,
+            "target_slot": 2,
+            "type": "FLOAT"
+          },
+          {
+            "id": 16,
+            "origin_id": 8,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "VIDEO"
+          },
+          {
+            "id": 50,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 1,
+            "target_slot": 0,
+            "type": "VIDEO"
+          },
+          {
+            "id": 51,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 2,
+            "target_slot": 0,
+            "type": "VIDEO"
+          },
+          {
+            "id": 54,
+            "origin_id": 2,
+            "origin_slot": 0,
+            "target_id": 27,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 55,
+            "origin_id": 27,
+            "origin_slot": 0,
+            "target_id": 13,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 56,
+            "origin_id": 28,
+            "origin_slot": 0,
+            "target_id": 27,
+            "target_slot": 2,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 59,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 28,
+            "target_slot": 0,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 60,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 6,
+            "target_slot": 4,
+            "type": "COMBO"
+          },
+          {
+            "id": 62,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 6,
+            "target_slot": 3,
+            "type": "COMBO"
+          },
+          {
+            "id": 63,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 11,
+            "target_slot": 0,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 75,
+            "origin_id": 6,
+            "origin_slot": 0,
+            "target_id": 27,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 79,
+            "origin_id": 42,
+            "origin_slot": 0,
+            "target_id": 3,
+            "target_slot": 0,
+            "type": "AUDIO"
+          },
+          {
+            "id": 83,
+            "origin_id": 2,
+            "origin_slot": 1,
+            "target_id": 42,
+            "target_slot": 0,
+            "type": "AUDIO"
+          },
+          {
+            "id": 84,
+            "origin_id": 1,
+            "origin_slot": 1,
+            "target_id": 42,
+            "target_slot": 1,
+            "type": "AUDIO"
+          }
+        ],
+        "name": "Merge Videos",
+        "nodes": [
+          {
+            "flags": {},
+            "id": 11,
+            "inputs": [
+              {
+                "link": 63,
+                "localized_name": "value",
+                "name": "value",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "value"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 7,
+            "outputs": [
+              {
+                "links": [
+                  14
+                ],
+                "localized_name": "BOOLEAN",
+                "name": "BOOLEAN",
+                "type": "BOOLEAN"
+              }
+            ],
+            "pos": [
+              -990,
+              1230
+            ],
+            "properties": {
+              "Node name for S&R": "PrimitiveBoolean",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "size": [
+              270,
+              90
+            ],
+            "type": "PrimitiveBoolean",
+            "widgets_values": [
+              false
+            ],
+            "widgets_values_named": {
+              "value": false
+            }
+          },
+          {
+            "flags": {},
+            "id": 10,
+            "inputs": [
+              {
+                "link": null,
+                "localized_name": "duration",
+                "name": "duration",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "duration"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "sample_rate",
+                "name": "sample_rate",
+                "type": "INT",
+                "widget": {
+                  "name": "sample_rate"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "channels",
+                "name": "channels",
+                "type": "INT",
+                "widget": {
+                  "name": "channels"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 0,
+            "outputs": [
+              {
+                "links": [
+                  22
+                ],
+                "localized_name": "AUDIO",
+                "name": "AUDIO",
+                "type": "AUDIO"
+              }
+            ],
+            "pos": [
+              -990,
+              1060
+            ],
+            "properties": {
+              "Node name for S&R": "EmptyAudio",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "size": [
+              270,
+              110
+            ],
+            "type": "EmptyAudio",
+            "widgets_values": [
+              60,
+              44100,
+              2
+            ],
+            "widgets_values_named": {
+              "channels": 2,
+              "duration": 60,
+              "sample_rate": 44100
+            }
+          },
+          {
+            "flags": {},
+            "id": 3,
+            "inputs": [
+              {
+                "link": 79,
+                "localized_name": "on_false",
+                "name": "on_false",
+                "type": "AUDIO"
+              },
+              {
+                "link": 22,
+                "localized_name": "on_true",
+                "name": "on_true",
+                "type": "AUDIO"
+              },
+              {
+                "link": 14,
+                "localized_name": "switch",
+                "name": "switch",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "switch"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 3,
+            "outputs": [
+              {
+                "links": [
+                  12
+                ],
+                "localized_name": "output",
+                "name": "output",
+                "type": "AUDIO"
+              }
+            ],
+            "pos": [
+              -370,
+              1010
+            ],
+            "properties": {
+              "Node name for S&R": "ComfySwitchNode",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "size": [
+              270,
+              130
+            ],
+            "type": "ComfySwitchNode",
+            "widgets_values": [
+              false
+            ],
+            "widgets_values_named": {
+              "switch": false
+            }
+          },
+          {
+            "flags": {},
+            "id": 6,
+            "inputs": [
+              {
+                "link": 39,
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE"
+              },
+              {
+                "link": 4,
+                "localized_name": "target_width",
+                "name": "target_width",
+                "type": "INT",
+                "widget": {
+                  "name": "target_width"
+                }
+              },
+              {
+                "link": 5,
+                "localized_name": "target_height",
+                "name": "target_height",
+                "type": "INT",
+                "widget": {
+                  "name": "target_height"
+                }
+              },
+              {
+                "link": 62,
+                "localized_name": "padding_color",
+                "name": "padding_color",
+                "type": "COMBO",
+                "widget": {
+                  "name": "padding_color"
+                }
+              },
+              {
+                "link": 60,
+                "localized_name": "interpolation",
+                "name": "interpolation",
+                "type": "COMBO",
+                "widget": {
+                  "name": "interpolation"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 4,
+            "outputs": [
+              {
+                "links": [
+                  75
+                ],
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE"
+              }
+            ],
+            "pos": [
+              -400,
+              440
+            ],
+            "properties": {
+              "Node name for S&R": "ResizeAndPadImage",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "showAdvanced": true,
+            "size": [
+              270,
+              210
+            ],
+            "type": "ResizeAndPadImage",
+            "widgets_values": [
+              512,
+              512,
+              "white",
+              "lanczos"
+            ],
+            "widgets_values_named": {
+              "interpolation": "lanczos",
+              "padding_color": "white",
+              "target_height": 512,
+              "target_width": 512
+            }
+          },
+          {
+            "flags": {},
+            "id": 8,
+            "inputs": [
+              {
+                "link": 19,
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE"
+              },
+              {
+                "link": 12,
+                "localized_name": "audio",
+                "name": "audio",
+                "shape": 7,
+                "type": "AUDIO"
+              },
+              {
+                "link": 15,
+                "localized_name": "fps",
+                "name": "fps",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "fps"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "bit_depth",
+                "name": "bit_depth",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "bit_depth"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 6,
+            "outputs": [
+              {
+                "links": [
+                  16
+                ],
+                "localized_name": "VIDEO",
+                "name": "VIDEO",
+                "type": "VIDEO"
+              }
+            ],
+            "pos": [
+              880,
+              280
+            ],
+            "properties": {
+              "Node name for S&R": "CreateVideo",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "size": [
+              270,
+              140
+            ],
+            "type": "CreateVideo",
+            "widgets_values": [
+              30,
+              8
+            ],
+            "widgets_values_named": {
+              "bit_depth": 8,
+              "fps": 30
+            }
+          },
+          {
+            "flags": {},
+            "id": 2,
+            "inputs": [
+              {
+                "link": 51,
+                "localized_name": "video",
+                "name": "video",
+                "type": "VIDEO"
+              }
+            ],
+            "mode": 0,
+            "order": 2,
+            "outputs": [
+              {
+                "links": [
+                  39,
+                  54
+                ],
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE"
+              },
+              {
+                "links": [
+                  83
+                ],
+                "localized_name": "audio",
+                "name": "audio",
+                "type": "AUDIO"
+              },
+              {
+                "links": null,
+                "localized_name": "fps",
+                "name": "fps",
+                "type": "FLOAT"
+              },
+              {
+                "links": null,
+                "localized_name": "bit_depth",
+                "name": "bit_depth",
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              -1590,
+              460
+            ],
+            "properties": {
+              "Node name for S&R": "GetVideoComponents",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "size": [
+              230,
+              120
+            ],
+            "type": "GetVideoComponents"
+          },
+          {
+            "flags": {},
+            "id": 27,
+            "inputs": [
+              {
+                "link": 54,
+                "localized_name": "on_false",
+                "name": "on_false",
+                "type": "IMAGE"
+              },
+              {
+                "link": 75,
+                "localized_name": "on_true",
+                "name": "on_true",
+                "type": "IMAGE"
+              },
+              {
+                "link": 56,
+                "localized_name": "switch",
+                "name": "switch",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "switch"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 9,
+            "outputs": [
+              {
+                "links": [
+                  55
+                ],
+                "localized_name": "output",
+                "name": "output",
+                "type": "IMAGE"
+              }
+            ],
+            "pos": [
+              60,
+              70
+            ],
+            "properties": {
+              "Node name for S&R": "ComfySwitchNode",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "size": [
+              280,
+              130
+            ],
+            "type": "ComfySwitchNode",
+            "widgets_values": [
+              false
+            ],
+            "widgets_values_named": {
+              "switch": false
+            }
+          },
+          {
+            "flags": {},
+            "id": 1,
+            "inputs": [
+              {
+                "link": 50,
+                "localized_name": "video",
+                "name": "video",
+                "type": "VIDEO"
+              }
+            ],
+            "mode": 0,
+            "order": 1,
+            "outputs": [
+              {
+                "links": [
+                  3,
+                  17
+                ],
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE"
+              },
+              {
+                "links": [
+                  84
+                ],
+                "localized_name": "audio",
+                "name": "audio",
+                "type": "AUDIO"
+              },
+              {
+                "links": [
+                  15
+                ],
+                "localized_name": "fps",
+                "name": "fps",
+                "type": "FLOAT"
+              },
+              {
+                "links": null,
+                "localized_name": "bit_depth",
+                "name": "bit_depth",
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              -1600,
+              30
+            ],
+            "properties": {
+              "Node name for S&R": "GetVideoComponents",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "size": [
+              230,
+              120
+            ],
+            "type": "GetVideoComponents"
+          },
+          {
+            "flags": {},
+            "id": 7,
+            "inputs": [
+              {
+                "link": 3,
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE"
+              }
+            ],
+            "mode": 0,
+            "order": 5,
+            "outputs": [
+              {
+                "links": [
+                  4
+                ],
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT"
+              },
+              {
+                "links": [
+                  5
+                ],
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "localized_name": "batch_size",
+                "name": "batch_size",
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              -1000,
+              480
+            ],
+            "properties": {
+              "Node name for S&R": "GetImageSize",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "size": [
+              260,
+              110
+            ],
+            "type": "GetImageSize"
+          },
+          {
+            "flags": {},
+            "id": 28,
+            "inputs": [
+              {
+                "link": 59,
+                "localized_name": "value",
+                "name": "value",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "value"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 10,
+            "outputs": [
+              {
+                "links": [
+                  56
+                ],
+                "localized_name": "BOOLEAN",
+                "name": "BOOLEAN",
+                "type": "BOOLEAN"
+              }
+            ],
+            "pos": [
+              -1590,
+              190
+            ],
+            "properties": {
+              "Node name for S&R": "PrimitiveBoolean",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "size": [
+              270,
+              90
+            ],
+            "type": "PrimitiveBoolean",
+            "widgets_values": [
+              false
+            ],
+            "widgets_values_named": {
+              "value": false
+            }
+          },
+          {
+            "flags": {},
+            "id": 13,
+            "inputs": [
+              {
+                "label": "image0",
+                "link": 17,
+                "localized_name": "images.image0",
+                "name": "images.image0",
+                "type": "IMAGE"
+              },
+              {
+                "label": "image1",
+                "link": 55,
+                "localized_name": "images.image1",
+                "name": "images.image1",
+                "shape": 7,
+                "type": "IMAGE"
+              },
+              {
+                "label": "image2",
+                "link": null,
+                "localized_name": "images.image2",
+                "name": "images.image2",
+                "shape": 7,
+                "type": "IMAGE"
+              }
+            ],
+            "mode": 0,
+            "order": 8,
+            "outputs": [
+              {
+                "links": [
+                  19
+                ],
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE"
+              }
+            ],
+            "pos": [
+              530,
+              10
+            ],
+            "properties": {
+              "Node name for S&R": "BatchImagesNode",
+              "cnr_id": "comfy-core",
+              "enableTabs": false,
+              "hasSecondTab": false,
+              "secondTabOffset": 80,
+              "secondTabText": "Send Back",
+              "secondTabWidth": 65,
+              "tabWidth": 65,
+              "tabXOffset": 10,
+              "ver": "0.21.1"
+            },
+            "size": [
+              230,
+              120
+            ],
+            "type": "BatchImagesNode"
+          },
+          {
+            "flags": {},
+            "id": 42,
+            "inputs": [
+              {
+                "link": 83,
+                "localized_name": "audio1",
+                "name": "audio1",
+                "type": "AUDIO"
+              },
+              {
+                "link": 84,
+                "localized_name": "audio2",
+                "name": "audio2",
+                "type": "AUDIO"
+              },
+              {
+                "link": null,
+                "localized_name": "direction",
+                "name": "direction",
+                "type": "COMBO",
+                "widget": {
+                  "name": "direction"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 11,
+            "outputs": [
+              {
+                "links": [
+                  79
+                ],
+                "localized_name": "AUDIO",
+                "name": "AUDIO",
+                "type": "AUDIO"
+              }
+            ],
+            "pos": [
+              -990,
+              900
+            ],
+            "properties": {
+              "Node name for S&R": "AudioConcat"
+            },
+            "size": [
+              270,
+              110
+            ],
+            "type": "AudioConcat",
+            "widgets_values": [
+              "after"
+            ],
+            "widgets_values_named": {
+              "direction": "after"
+            }
+          }
+        ],
+        "outputNode": {
+          "bounding": [
+            1210,
+            614,
+            128,
+            68
+          ],
+          "id": -20
+        },
+        "outputs": [
+          {
+            "id": "be99efc6-7fb3-4059-93d0-136dc8cc8faf",
+            "linkIds": [
+              16
+            ],
+            "localized_name": "merged_video",
+            "name": "merged_video",
+            "pos": [
+              1234,
+              638
+            ],
+            "type": "VIDEO"
+          }
+        ],
+        "revision": 0,
+        "state": {
+          "lastGroupId": 2,
+          "lastLinkId": 86,
+          "lastNodeId": 43,
+          "lastRerouteId": 0
+        },
+        "version": 1,
+        "widgets": []
+      }
+    ]
+  },
+  "extra": {
+    "ds": {
+      "offset": [
+        1771.3300540123455,
+        -6963.952841676311
+      ],
+      "scale": 0.3713467048710602
+    },
+    "frontendVersion": "1.48.7"
+  },
+  "groups": [],
+  "id": "7a06a6de-067d-4d41-b7bf-7d6add20ec8c",
+  "last_link_id": 86,
+  "last_node_id": 43,
+  "links": [
+    [
+      27,
+      35,
+      0,
+      36,
+      0,
+      "VIDEO"
+    ],
+    [
+      30,
+      36,
+      0,
+      38,
+      9,
+      "VIDEO"
+    ],
+    [
+      31,
+      38,
+      0,
+      16,
+      0,
+      "VIDEO"
+    ],
+    [
+      76,
+      35,
+      0,
+      39,
+      0,
+      "VIDEO"
+    ],
+    [
+      78,
+      39,
+      0,
+      40,
+      0,
+      "VIDEO"
+    ],
+    [
+      86,
+      38,
+      0,
+      39,
+      1,
+      "VIDEO"
+    ]
+  ],
+  "nodes": [
+    {
+      "flags": {},
+      "id": 16,
+      "inputs": [
+        {
+          "link": 31,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 4,
+      "outputs": [
+        {
+          "links": [],
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        500,
+        7850
+      ],
+      "properties": {},
+      "size": [
+        700,
+        126
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.5_video_extend",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "codec": "auto",
+        "filename_prefix": "video/Seedance2.5_video_extend",
+        "format": "auto"
+      }
+    },
+    {
+      "flags": {},
+      "id": 35,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "file",
+          "name": "file",
+          "type": "COMBO",
+          "widget": {
+            "name": "file"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            27,
+            76
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        -640,
+        7850
+      ],
+      "properties": {
+        "Node name for S&R": "LoadVideo"
+      },
+      "size": [
+        330,
+        470
+      ],
+      "type": "LoadVideo",
+      "widgets_values": [
+        "sloth_bullfight.mp4",
+        "image"
+      ],
+      "widgets_values_named": {
+        "file": "sloth_bullfight.mp4",
+        "upload": "image"
+      }
+    },
+    {
+      "flags": {},
+      "id": 36,
+      "inputs": [
+        {
+          "link": 27,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "start_time",
+          "name": "start_time",
+          "type": "FLOAT",
+          "widget": {
+            "name": "start_time"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "duration",
+          "name": "duration",
+          "type": "FLOAT",
+          "widget": {
+            "name": "duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "strict_duration",
+          "name": "strict_duration",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "strict_duration"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": [
+            30
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        -260,
+        7850
+      ],
+      "properties": {
+        "Node name for S&R": "Video Slice"
+      },
+      "size": [
+        270,
+        150
+      ],
+      "type": "Video Slice",
+      "widgets_values": [
+        0,
+        5,
+        false
+      ],
+      "widgets_values_named": {
+        "duration": 5,
+        "start_time": 0,
+        "strict_duration": false
+      }
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 38,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.task_type",
+          "name": "model.task_type",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.task_type"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.output_format",
+          "name": "model.output_format",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.output_format"
+          }
+        },
+        {
+          "label": "image_1",
+          "link": null,
+          "localized_name": "model.reference_images.image_1",
+          "name": "model.reference_images.image_1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video_1",
+          "link": 30,
+          "localized_name": "model.reference_videos.video_1",
+          "name": "model.reference_videos.video_1",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "video_2",
+          "link": null,
+          "localized_name": "model.reference_videos.video_2",
+          "name": "model.reference_videos.video_2",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "audio_1",
+          "link": null,
+          "localized_name": "model.reference_audios.audio_1",
+          "name": "model.reference_audios.audio_1",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "asset_1",
+          "link": null,
+          "localized_name": "model.reference_assets.asset_1",
+          "name": "model.reference_assets.asset_1",
+          "shape": 7,
+          "type": "STRING"
+        },
+        {
+          "link": null,
+          "localized_name": "model.auto_downscale",
+          "name": "model.auto_downscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_downscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.auto_upscale",
+          "name": "model.auto_upscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_upscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 3,
+      "outputs": [
+        {
+          "links": [
+            31,
+            86
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        60,
+        7850
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2ReferenceNodeV2"
+      },
+      "showAdvanced": false,
+      "size": [
+        400,
+        463
+      ],
+      "type": "ByteDance2ReferenceNodeV2",
+      "widgets_values": [
+        "Seedance 2.5",
+        "Continuing from the previous shot, live-action western rodeo, dusty arena, golden hour. The raging bull calms down and stops, the buzzer rings. The sloth in the cowboy hat hops off the bull's back, lands steadily in the dust, slowly dusts off his hat, then strolls away unhurriedly with a deadpan expression. Slow motion, dust floating in warm sunlight, cheering crowd roars and waves hats in the background. Steadicam follow shot. Western arena music swells. No black frames, no text overlays.",
+        "720p",
+        "adaptive",
+        5,
+        true,
+        "extend",
+        "mp4",
+        true,
+        false,
+        1672978219,
+        "fixed",
+        false
+      ],
+      "widgets_values_named": {
+        "control_after_generate": "fixed",
+        "model": "Seedance 2.5",
+        "model.auto_downscale": true,
+        "model.auto_upscale": false,
+        "model.duration": 5,
+        "model.generate_audio": true,
+        "model.output_format": "mp4",
+        "model.prompt": "Continuing from the previous shot, live-action western rodeo, dusty arena, golden hour. The raging bull calms down and stops, the buzzer rings. The sloth in the cowboy hat hops off the bull's back, lands steadily in the dust, slowly dusts off his hat, then strolls away unhurriedly with a deadpan expression. Slow motion, dust floating in warm sunlight, cheering crowd roars and waves hats in the background. Steadicam follow shot. Western arena music swells. No black frames, no text overlays.",
+        "model.ratio": "adaptive",
+        "model.resolution": "720p",
+        "model.task_type": "extend",
+        "seed": 1672978219,
+        "watermark": false
+      }
+    },
+    {
+      "flags": {},
+      "id": 39,
+      "inputs": [
+        {
+          "label": "base_video",
+          "link": 76,
+          "localized_name": "clip_to_resize",
+          "name": "clip_to_resize",
+          "type": "VIDEO"
+        },
+        {
+          "label": "second_video",
+          "link": 86,
+          "localized_name": "base_video",
+          "name": "base_video",
+          "type": "VIDEO"
+        },
+        {
+          "label": "pad_second_video",
+          "link": null,
+          "localized_name": "pad_second_video",
+          "name": "pad_second_video",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "pad_second_video"
+          }
+        },
+        {
+          "link": null,
+          "name": "interpolation",
+          "type": "COMBO",
+          "widget": {
+            "name": "interpolation"
+          }
+        },
+        {
+          "link": null,
+          "name": "padding_color",
+          "type": "COMBO",
+          "widget": {
+            "name": "padding_color"
+          }
+        },
+        {
+          "label": "drop_audio",
+          "link": null,
+          "localized_name": "drop_audio",
+          "name": "drop_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "drop_audio"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 5,
+      "outputs": [
+        {
+          "links": [
+            78
+          ],
+          "localized_name": "merged_video",
+          "name": "merged_video",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        1250,
+        7850
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "previewExposures": [],
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ver": "0.21.1"
+      },
+      "size": [
+        290,
+        190
+      ],
+      "type": "d9aa59a4-3784-4796-9f1b-5b467fb41fa1",
+      "widgets_values": [
+        false,
+        "lanczos",
+        "white",
+        false
+      ],
+      "widgets_values_named": {
+        "drop_audio": false,
+        "interpolation": "lanczos",
+        "pad_second_video": false,
+        "padding_color": "white"
+      }
+    },
+    {
+      "flags": {},
+      "id": 40,
+      "inputs": [
+        {
+          "link": 78,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 6,
+      "outputs": [
+        {
+          "links": [],
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        1590,
+        7850
+      ],
+      "properties": {},
+      "size": [
+        700,
+        126
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.5_video_extend_merged",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "codec": "auto",
+        "filename_prefix": "video/Seedance2.5_video_extend_merged",
+        "format": "auto"
+      }
+    },
+    {
+      "bgcolor": "#000",
+      "color": "#222",
+      "flags": {},
+      "id": 41,
+      "inputs": [],
+      "mode": 0,
+      "order": 1,
+      "outputs": [],
+      "pos": [
+        -1180,
+        7850
+      ],
+      "properties": {},
+      "size": [
+        500,
+        940.6875
+      ],
+      "title": "Note: Video Extend",
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "**Input Assets** \n- [sloth_bullfight.mp4](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/sloth_bullfight.mp4)\n\nThis template extends an existing video forward or backward for a new segment (default 5 seconds). The model keeps the character, scene, aspect ratio, and overall style consistent with your source footage. Only the new segment is generated; the source video is not included in the output.\n\n**How to write the prompt:**\n\n1. **State the extension intent first.** Begin with phrases like \"Continuing from the previous shot\" or \"Extend forward from the source video\" so the model knows this is a continuation, not a new video.\n\n2. **Describe only the new segment.** Don't re-describe the whole scene. Write what happens in the 5 seconds you're adding, e.g., the character lands, reacts, walks away.\n\n3. **Keep the character and environment consistent.** Reference the same character and outfit from the source (\"the same sloth in the cowboy hat\"), and stay in the same location and style.\n\n4. **One camera move, one lighting keyword.** Pick a single camera movement (slow push in, steadicam follow, low angle) and one lighting term (golden hour cinematography). One strong keyword beats a pile of adjectives.\n\n5. **Add audio.** Seedance generates sound natively. Describe the music and sound effects at the end (\"western arena music swells\").\n\n6. **Close with constraints.** End with \"No black frames, no text overlays\" to keep the output clean.\n\n**Example:**\n\n> Continuing from the previous shot, live-action western rodeo, dusty arena, golden hour. The raging bull calms down and stops, the buzzer rings. The sloth in the cowboy hat hops off the bull's back, lands steadily in the dust, slowly dusts off his hat, then strolls away unhurriedly with a deadpan expression. Slow motion, dust floating in warm sunlight, cheering crowd roars and waves hats in the background. Steadicam follow shot. Western arena music swells. No black frames, no text overlays.\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      ],
+      "widgets_values_named": {
+        "text": "**Input Assets** \n- [sloth_bullfight.mp4](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/sloth_bullfight.mp4)\n\nThis template extends an existing video forward or backward for a new segment (default 5 seconds). The model keeps the character, scene, aspect ratio, and overall style consistent with your source footage. Only the new segment is generated; the source video is not included in the output.\n\n**How to write the prompt:**\n\n1. **State the extension intent first.** Begin with phrases like \"Continuing from the previous shot\" or \"Extend forward from the source video\" so the model knows this is a continuation, not a new video.\n\n2. **Describe only the new segment.** Don't re-describe the whole scene. Write what happens in the 5 seconds you're adding, e.g., the character lands, reacts, walks away.\n\n3. **Keep the character and environment consistent.** Reference the same character and outfit from the source (\"the same sloth in the cowboy hat\"), and stay in the same location and style.\n\n4. **One camera move, one lighting keyword.** Pick a single camera movement (slow push in, steadicam follow, low angle) and one lighting term (golden hour cinematography). One strong keyword beats a pile of adjectives.\n\n5. **Add audio.** Seedance generates sound natively. Describe the music and sound effects at the end (\"western arena music swells\").\n\n6. **Close with constraints.** End with \"No black frames, no text overlays\" to keep the output clean.\n\n**Example:**\n\n> Continuing from the previous shot, live-action western rodeo, dusty arena, golden hour. The raging bull calms down and stops, the buzzer rings. The sloth in the cowboy hat hops off the bull's back, lands steadily in the dust, slowly dusts off his hat, then strolls away unhurriedly with a deadpan expression. Slow motion, dust floating in warm sunlight, cheering crowd roars and waves hats in the background. Steadicam follow shot. Western arena music swells. No black frames, no text overlays.\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n"
+      }
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

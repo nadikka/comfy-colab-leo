@@ -1,0 +1,500 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-09-04",
+  "source": "comfy.org workflow library - 12 golden descargados sin modificar",
+  "convention": {
+    "golden": "intocable, baseline de referencia",
+    "experiments": "pruebas, sufijo _testNNN",
+    "production": "renders finales versionados _vNNN"
+  },
+  "environment": {
+    "comfyui_local": "0.25.0",
+    "gpu_local": "AMD RX 6800M 12GB (ZLUDA a medias, no confiable)",
+    "ram_gb": 31.4,
+    "gpu_remoto": "Colab T4 via tunel comfy.leoblumfeld.com (CAIDO al momento de escribir esto)",
+    "nota": "10 de 12 workflows no necesitan GPU alguna"
+  },
+  "verification_status": "NINGUNO PROBADO EN VIVO. Las fichas estan derivadas del grafo JSON, no de corridas reales. Los cost_tier son RELATIVOS entre si, no precios verificados en creditos.",
+  "workflows": [
+    {
+      "id": "seedance25_r2v",
+      "file": "golden/seedance25_r2v_v001.json",
+      "version": "0.1.0",
+      "order": 1,
+      "purpose": "Reference-to-Video: una imagen de referencia + prompt -> clip. BASELINE PRIMARIO de R2V.",
+      "api_nodes": [
+        "ByteDance2ReferenceNode"
+      ],
+      "local_nodes": [
+        "LoadImage",
+        "SaveVideo"
+      ],
+      "custom_nodes": [],
+      "gpu": false,
+      "runs_on": "CPU (cualquiera). Nodos de API.",
+      "inputs": {
+        "image_1": "LoadImage (referencia)",
+        "prompt": "texto",
+        "seed": "int"
+      },
+      "outputs": {
+        "video": "SaveVideo mp4"
+      },
+      "model": "Seedance 2.5",
+      "resolution": "720p",
+      "ratio": "adaptive",
+      "duration_s": 5,
+      "audio": true,
+      "cost_tier": "BAJO",
+      "comfy_min": "0.25.0",
+      "blocked": false,
+      "risks": [
+        "Con 1 sola referencia el modelo inventa entorno y encuadre: si importa la identidad, anclarla upstream (character sheet) en vez de arreglarla despues.",
+        "ratio='adaptive' deja que el modelo decida el encuadre; fijarlo si la entrega tiene formato obligatorio."
+      ]
+    },
+    {
+      "id": "seedance25_flf2v",
+      "file": "golden/seedance25_flf2v_v001.json",
+      "version": "0.1.0",
+      "order": 2,
+      "purpose": "First/Last Frame: define composicion de inicio y de fin, el modelo interpola la transicion.",
+      "api_nodes": [
+        "ByteDance2FirstLastFrameNode"
+      ],
+      "local_nodes": [
+        "LoadImage x2",
+        "SaveVideo"
+      ],
+      "custom_nodes": [],
+      "gpu": false,
+      "runs_on": "CPU (cualquiera). Nodos de API.",
+      "inputs": {
+        "first_frame": "LoadImage",
+        "last_frame": "LoadImage",
+        "prompt": "texto"
+      },
+      "outputs": {
+        "video": "SaveVideo mp4"
+      },
+      "model": "Seedance 2.5",
+      "resolution": "720p",
+      "ratio": "(sin widget en 2.5: lo deriva de los frames)",
+      "duration_s": 5,
+      "audio": true,
+      "cost_tier": "BAJO",
+      "comfy_min": "0.25.0",
+      "blocked": false,
+      "risks": [
+        "OJO: el schema del nodo CAMBIA segun el modelo elegido. Con 'Seedance 2.5' NO hay model.ratio y aparece model.output_format; con 'Seedance 2.0' SI hay model.ratio. Cambiar el dropdown reordena los widgets.",
+        "Si los dos frames difieren mucho en encuadre o iluminacion, la interpolacion mete morphing.",
+        "El prompt del golden referencia los frames como @image1/@image2: esa sintaxis es parte del contrato, no decorativa."
+      ]
+    },
+    {
+      "id": "seedance25_extend",
+      "file": "golden/seedance25_extend_v001.json",
+      "version": "0.1.0",
+      "order": 3,
+      "purpose": "Video extend: continua un plano existente y ademas devuelve el merge del original + la continuacion.",
+      "api_nodes": [
+        "ByteDance2ReferenceNodeV2"
+      ],
+      "local_nodes": [
+        "LoadVideo",
+        "Video Slice",
+        "SaveVideo x2",
+        "subgrafo 'Merge Videos' (AudioConcat, BatchImagesNode, CreateVideo, ResizeAndPadImage, GetVideoComponents, ComfySwitchNode)"
+      ],
+      "custom_nodes": [],
+      "gpu": false,
+      "runs_on": "CPU (cualquiera). Nodos de API.",
+      "inputs": {
+        "video_1": "LoadVideo -> Video Slice (cola del plano a continuar)",
+        "prompt": "que pasa despues",
+        "model.task_type": "'extend' (clave: es lo que activa el modo)"
+      },
+      "outputs": {
+        "video_continuacion": "SaveVideo",
+        "video_merged": "SaveVideo (original + continuacion pegados)"
+      },
+      "model": "Seedance 2.5",
+      "resolution": "720p",
+      "ratio": "adaptive",
+      "duration_s": 5,
+      "audio": true,
+      "cost_tier": "MEDIO",
+      "comfy_min": "> 0.25.0 (VER BLOQUEO)",
+      "blocked": true,
+      "risks": [
+        "BLOQUEADO HOY: ByteDance2ReferenceNodeV2 NO existe en el ComfyUI local v0.25.0 (comfy_api_nodes/nodes_bytedance.py solo trae ReferenceNode, FirstLastFrameNode y TextToVideoNode). Requiere git pull. Es el UNICO de los 12 que necesita actualizar ComfyUI.",
+        "model.task_type='extend' es el parametro que distingue este workflow de un R2V comun: si se pisa, deja de extender.",
+        "El subgrafo Merge Videos hace ResizeAndPadImage: si original y continuacion no comparten resolucion, aparecen barras."
+      ]
+    },
+    {
+      "id": "seedance25_edit",
+      "file": "golden/seedance25_edit_v001.json",
+      "version": "0.1.0",
+      "order": 4,
+      "purpose": "Video edit / v2v: transforma un video existente por instruccion (ej. pasarlo a estilo clay) conservando movimiento y personajes.",
+      "api_nodes": [
+        "ByteDance2ReferenceNode"
+      ],
+      "local_nodes": [
+        "LoadVideo",
+        "Video Slice",
+        "SaveVideo"
+      ],
+      "custom_nodes": [],
+      "gpu": false,
+      "runs_on": "CPU (cualquiera). Nodos de API.",
+      "inputs": {
+        "video_1": "LoadVideo -> Video Slice (recorta el tramo a editar)",
+        "prompt": "instruccion de edicion"
+      },
+      "outputs": {
+        "video": "SaveVideo mp4"
+      },
+      "model": "Seedance 2.5",
+      "resolution": "720p",
+      "ratio": "adaptive",
+      "duration_s": 5,
+      "audio": true,
+      "cost_tier": "MEDIO",
+      "comfy_min": "0.25.0",
+      "blocked": false,
+      "risks": [
+        "'Video Slice' esta antes del nodo de API por una razon: manda solo el tramo. Si se saltea, se sube y procesa video de mas.",
+        "La duracion del nodo (5s) y la del slice tienen que coincidir, si no se estira o se corta.",
+        "Deriva de identidad: la transformacion de estilo puede arrastrar los rasgos de los personajes."
+      ]
+    },
+    {
+      "id": "seedance20_cinematic_prompt_studio",
+      "file": "golden/seedance20_cinematic_prompt_studio_v001.json",
+      "version": "0.1.0",
+      "order": 5,
+      "purpose": "Compilador de intencion creativa: Gemini traduce camara/lente/composicion/luz/ritmo a un prompt de Seedance. Es el 'director' del brief.",
+      "api_nodes": [
+        "GeminiNode (gemini-3-1-pro)",
+        "ByteDance2ReferenceNode"
+      ],
+      "local_nodes": [
+        "LoadImage",
+        "PreviewAny",
+        "SaveVideo"
+      ],
+      "custom_nodes": [],
+      "gpu": false,
+      "runs_on": "CPU (cualquiera). Nodos de API.",
+      "inputs": {
+        "image_1": "LoadImage (referencia visual)",
+        "intent": "brief humano en texto -> Gemini"
+      },
+      "outputs": {
+        "prompt": "PreviewAny (el prompt compilado, inspeccionable ANTES de gastar)",
+        "video": "SaveVideo mp4"
+      },
+      "model": "Seedance 2.0 Fast",
+      "resolution": "720p",
+      "ratio": "21:9",
+      "duration_s": 7,
+      "audio": true,
+      "cost_tier": "BAJO-MEDIO",
+      "comfy_min": "0.25.0",
+      "blocked": false,
+      "risks": [
+        "Doble costo por corrida: se paga Gemini Y Seedance. Iterar el prompt mirando PreviewAny antes de dejar que dispare el video.",
+        "Usa 'Seedance 2.0 Fast', no 2.5: es el candidato natural para previews baratos.",
+        "Es la pieza reusable del brief (CREATIVE BRIEF INTERFACE): conviene extraerla como modulo y reusarla en los demas."
+      ]
+    },
+    {
+      "id": "storyboard_gptimage_seedance20",
+      "file": "golden/storyboard_gptimage_seedance20_v001.json",
+      "version": "0.1.0",
+      "order": 6,
+      "purpose": "Idea -> storyboard/keyframes con GPT Image -> secuencia animada. Es el patron 'anclar upstream' que pide el brief.",
+      "api_nodes": [
+        "OpenAIGPTImage1",
+        "ByteDance2ReferenceNode"
+      ],
+      "local_nodes": [
+        "LoadImage",
+        "SaveImage",
+        "SaveVideo"
+      ],
+      "custom_nodes": [],
+      "gpu": false,
+      "runs_on": "CPU (cualquiera). Nodos de API.",
+      "inputs": {
+        "image_1": "LoadImage",
+        "prompt": "descripcion de la secuencia (6 planos / 15s en el golden)"
+      },
+      "outputs": {
+        "storyboard": "SaveImage 1536x1024",
+        "video": "SaveVideo mp4"
+      },
+      "model": "Seedance 2.0",
+      "resolution": "720p",
+      "ratio": "adaptive",
+      "duration_s": 15,
+      "audio": true,
+      "cost_tier": "ALTO",
+      "comfy_min": "0.25.0",
+      "blocked": false,
+      "risks": [
+        "15 segundos es la duracion mas larga de los 12: el mas caro por corrida. Bajar a 5s para test.",
+        "Requiere credenciales de OpenAI ADEMAS de las de ByteDance.",
+        "GPT Image en calidad 'medium' 1536x1024: subir la calidad multiplica el costo del paso de storyboard."
+      ]
+    },
+    {
+      "id": "product_ad_cinematic_seedance",
+      "file": "golden/product_ad_cinematic_seedance_v001.json",
+      "version": "0.1.0",
+      "order": 7,
+      "purpose": "Publicidad de producto: 3 referencias + guia de marca -> Gemini 3.1 Pro planifica los planos -> Seedance 1080p.",
+      "api_nodes": [
+        "GeminiNodeV2 (Gemini 3.1 Pro)",
+        "ByteDance2ReferenceNode"
+      ],
+      "local_nodes": [
+        "LoadImage x3",
+        "PrimitiveStringMultiline x3",
+        "PreviewAny",
+        "SaveVideo",
+        "subgrafo 'Create Prompt' (RegexReplace, SomethingToString)",
+        "subgrafo 'Selected Prompt' (ComfySwitchNode, StringCompare)"
+      ],
+      "custom_nodes": [],
+      "gpu": false,
+      "runs_on": "CPU (cualquiera). Nodos de API.",
+      "inputs": {
+        "image_1..3": "LoadImage x3 (producto / hero / detalle)",
+        "brand_guidance": "PrimitiveStringMultiline x3"
+      },
+      "outputs": {
+        "prompt": "PreviewAny",
+        "video": "SaveVideo mp4"
+      },
+      "model": "Seedance 2.0",
+      "resolution": "1080p",
+      "ratio": "adaptive",
+      "duration_s": 7,
+      "audio": true,
+      "cost_tier": "MEDIO-ALTO",
+      "comfy_min": "0.25.0",
+      "blocked": false,
+      "risks": [
+        "El subgrafo 'Selected Prompt' usa ComfySwitchNode: hay una rama activa y otras muertas. Verificar cual esta seleccionada antes de disparar, o se paga un video con el prompt equivocado.",
+        "Consistencia de producto: es el riesgo central de este caso. Las 3 referencias tienen que mostrar el MISMO producto desde angulos distintos, no 3 productos.",
+        "Gemini 3.1 Pro es el modelo de texto mas caro de los usados en los 12."
+      ]
+    },
+    {
+      "id": "seedance20_depthmotion",
+      "file": "golden/seedance20_depthmotion_v001.json",
+      "version": "0.1.0",
+      "order": 8,
+      "purpose": "Transferencia de movimiento: extrae profundidad/motion de un video fuente y le aplica otra identidad visual.",
+      "api_nodes": [
+        "ByteDance2ReferenceNode (dentro del subgrafo 'Seedance 2.0 Depth Dancer')"
+      ],
+      "local_nodes": [
+        "LoadImage",
+        "VHS_LoadVideo",
+        "SaveVideo",
+        "DepthAnythingV2Preprocessor",
+        "VHS_VideoCombine",
+        "VHS_VideoInfo",
+        "GetVideoComponents",
+        "CreateVideo"
+      ],
+      "custom_nodes": [
+        "ComfyUI-VideoHelperSuite (INSTALADO)",
+        "comfyui_controlnet_aux (INSTALADO)"
+      ],
+      "gpu": true,
+      "runs_on": "Necesita GPU (o CPU lenta): DepthAnythingV2Preprocessor es modelo LOCAL.",
+      "inputs": {
+        "video": "VHS_LoadVideo (fuente de movimiento)",
+        "image_1": "LoadImage (identidad visual destino)"
+      },
+      "outputs": {
+        "video": "SaveVideo mp4"
+      },
+      "model": "Seedance 2.0",
+      "resolution": "720p",
+      "ratio": "adaptive",
+      "duration_s": 5,
+      "audio": true,
+      "cost_tier": "MEDIO (+ tiempo de GPU local)",
+      "comfy_min": "0.25.0",
+      "blocked": false,
+      "risks": [
+        "UNICO de los 12 que mezcla local + API: si el Colab esta apagado hay que correr Depth Anything V2 en CPU (lento, pero funciona).",
+        "El checkpoint de Depth Anything V2 hay que BAJARLO: los custom nodes estan instalados pero el peso NO se verifico en disco (models/ no existe localmente).",
+        "Deriva geometrica: la profundidad del video fuente puede pelearse con la identidad destino si las siluetas no coinciden."
+      ]
+    },
+    {
+      "id": "cinematic_annotate_seedance",
+      "file": "golden/cinematic_annotate_seedance_v001.json",
+      "version": "0.1.0",
+      "order": 9,
+      "purpose": "Anotacion cinematografica: se marca una imagen a mano (flechas, cajas, etiquetas) y Gemini lee esas marcas como direccion de camara y movimiento.",
+      "api_nodes": [
+        "GeminiNode (gemini-3-1-flash-lite)",
+        "GeminiImage2Node (Nano Banana 2 / Gemini 3.1 Flash Image)",
+        "ByteDance2ReferenceNode"
+      ],
+      "local_nodes": [
+        "LoadImage",
+        "PreviewImage",
+        "PreviewAny",
+        "SaveVideo"
+      ],
+      "custom_nodes": [],
+      "gpu": false,
+      "runs_on": "CPU (cualquiera). Nodos de API.",
+      "inputs": {
+        "image_1": "LoadImage (frame limpio con marcas encima)"
+      },
+      "outputs": {
+        "prompt": "PreviewAny",
+        "video": "SaveVideo mp4"
+      },
+      "model": "Seedance 2.0",
+      "resolution": "720p",
+      "ratio": "21:9",
+      "duration_s": 7,
+      "audio": true,
+      "cost_tier": "MEDIO",
+      "comfy_min": "0.25.0",
+      "blocked": false,
+      "risks": [
+        "Triple costo por corrida: 2 llamadas a Gemini + Seedance.",
+        "El system_prompt le ordena explicitamente que las marcas NO aparezcan en el video. Si se toca ese texto, las flechas pueden terminar renderizadas.",
+        "Depende de que las anotaciones sean legibles: marcas ambiguas producen direccion de camara ambigua."
+      ]
+    },
+    {
+      "id": "seedance20_r2v_4k",
+      "file": "golden/seedance20_r2v_4k_v001.json",
+      "version": "0.1.0",
+      "order": 10,
+      "purpose": "R2V de alta calidad con hasta 4 imagenes de referencia. Baseline de calidad, no de iteracion.",
+      "api_nodes": [
+        "ByteDance2ReferenceNode"
+      ],
+      "local_nodes": [
+        "LoadImage x4",
+        "SaveVideo"
+      ],
+      "custom_nodes": [],
+      "gpu": false,
+      "runs_on": "CPU (cualquiera). Nodos de API.",
+      "inputs": {
+        "image_1..image_4": "LoadImage x4 (referencias multiples)",
+        "prompt": "texto"
+      },
+      "outputs": {
+        "video": "SaveVideo mp4"
+      },
+      "model": "Seedance 2.0",
+      "resolution": "4k",
+      "ratio": "1:1",
+      "duration_s": 7,
+      "audio": true,
+      "cost_tier": "ALTO",
+      "comfy_min": "0.25.0",
+      "blocked": false,
+      "risks": [
+        "4k x 7s = el tier mas caro de los R2V. NUNCA iterar aca: probar en seedance25_r2v a 720p y recien despues subir.",
+        "ratio 1:1 es un default del golden, no una restriccion del modelo.",
+        "Las 4 referencias solo suman si son coherentes entre si; referencias contradictorias degradan el resultado."
+      ]
+    },
+    {
+      "id": "seedance20_multiframe_flf2v",
+      "file": "golden/seedance20_multiframe_flf2v_v001.json",
+      "version": "0.1.0",
+      "order": 11,
+      "purpose": "Stitch multiframe: 5 nodos FLF2V encadenados con 6 imagenes -> 5 clips + concatenacion. Secuencia larga con control de composicion en cada corte.",
+      "api_nodes": [
+        "ByteDance2FirstLastFrameNode x5"
+      ],
+      "local_nodes": [
+        "LoadImage x6",
+        "SaveVideo x6",
+        "ImageBatch x4",
+        "GetVideoComponents x5",
+        "CreateVideo"
+      ],
+      "custom_nodes": [],
+      "gpu": false,
+      "runs_on": "CPU (cualquiera). Nodos de API.",
+      "inputs": {
+        "image_1..image_6": "LoadImage x6 (los 6 puntos de anclaje de la secuencia)"
+      },
+      "outputs": {
+        "clips": "SaveVideo x5",
+        "secuencia": "SaveVideo (concatenado)"
+      },
+      "model": "Seedance 2.0",
+      "resolution": "1080p",
+      "ratio": "16:9",
+      "duration_s": 4,
+      "audio": false,
+      "cost_tier": "ALTO",
+      "comfy_min": "0.25.0",
+      "blocked": false,
+      "risks": [
+        "5 llamadas a la API por corrida: el mayor costo por click de los 12. Un fallo en el clip 5 igual te cobro los 5.",
+        "Probar UN solo tramo (bypasseando los otros 4) antes de correr la cadena entera.",
+        "audio=False en los 5: la secuencia sale muda por diseno, el audio se pega despues."
+      ]
+    },
+    {
+      "id": "product_ad_video_seedance",
+      "file": "golden/product_ad_video_seedance_v001.json",
+      "version": "0.1.0",
+      "order": 12,
+      "purpose": "Publicidad de producto con hero/environment + producto/detalle + guia de marca. OJO: en el golden el motor de video NO es Seedance sino MiniMax H3 LOCAL.",
+      "api_nodes": [
+        "GeminiNodeV2 (Gemini 3.1 Pro)"
+      ],
+      "local_nodes": [
+        "LoadImage x3",
+        "PrimitiveStringMultiline x3",
+        "SaveVideo",
+        "subgrafo 'Reference to Video (Minimax H3)': UNETLoader, CLIPLoader, VAELoader, SamplerCustomAdvanced, MiniMaxH3ReferenceToVideo, BasicGuider, BasicScheduler, KSamplerSelect, RandomNoise, VAEDecode, VAEDecodeAudio, ResolutionSelector, CreateVideo"
+      ],
+      "custom_nodes": [],
+      "gpu": true,
+      "runs_on": "BLOQUEADO en este hardware. Difusion de video local a 1344x768 x124 frames.",
+      "inputs": {
+        "image_1..3": "LoadImage x3",
+        "brand_guidance": "PrimitiveStringMultiline x3"
+      },
+      "outputs": {
+        "video": "SaveVideo"
+      },
+      "model": "MiniMax H3 (LOCAL, no Seedance)",
+      "resolution": "1344x768",
+      "ratio": "-",
+      "duration_s": "124 frames",
+      "audio": true,
+      "cost_tier": "SIN COSTO DE API / IMPOSIBLE POR HARDWARE",
+      "comfy_min": "0.25.0",
+      "blocked": true,
+      "risks": [
+        "NO CORRE HOY. El subgrafo es difusion de video local completa: pide UNET + CLIP + VAE de MiniMax H3 a 1344x768 x124 frames. No entra en la T4 del Colab ni en la RX 6800M.",
+        "Para usarlo hay que AMPUTAR el subgrafo MiniMax y reemplazarlo por un ByteDance2ReferenceNode: ahi queda equivalente a product_ad_cinematic_seedance.",
+        "Ninguno de los pesos de MiniMax H3 esta en disco."
+      ]
+    }
+  ]
+}

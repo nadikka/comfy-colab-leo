@@ -1,0 +1,693 @@
+{
+  "config": {},
+  "extra": {
+    "VHS_KeepIntermediate": true,
+    "VHS_MetadataImage": true,
+    "VHS_latentpreview": true,
+    "VHS_latentpreviewrate": 0,
+    "ds": {
+      "offset": [
+        1646.171875,
+        -7870.2734375
+      ],
+      "scale": 0.8533333333333334
+    },
+    "frontendVersion": "1.45.15",
+    "linearData": {
+      "inputs": [
+        [
+          "356",
+          "image"
+        ],
+        [
+          "352",
+          "image"
+        ],
+        [
+          "353",
+          "image"
+        ],
+        [
+          "354",
+          "image"
+        ],
+        [
+          "360",
+          "model.prompt"
+        ],
+        [
+          "360",
+          "model.resolution"
+        ],
+        [
+          "360",
+          "model.ratio"
+        ],
+        [
+          "360",
+          "model.duration"
+        ],
+        [
+          "360",
+          "model.generate_audio"
+        ]
+      ],
+      "outputs": [
+        "344"
+      ]
+    },
+    "linearMode": true,
+    "ue_links": [],
+    "workflowRendererVersion": "Vue-corrected"
+  },
+  "groups": [],
+  "id": "9994178c-856f-479e-8ba6-cda3daf4a117",
+  "last_link_id": 658,
+  "last_node_id": 360,
+  "links": [
+    [
+      654,
+      356,
+      0,
+      360,
+      6,
+      "IMAGE"
+    ],
+    [
+      655,
+      352,
+      0,
+      360,
+      7,
+      "IMAGE"
+    ],
+    [
+      656,
+      353,
+      0,
+      360,
+      8,
+      "IMAGE"
+    ],
+    [
+      657,
+      354,
+      0,
+      360,
+      9,
+      "IMAGE"
+    ],
+    [
+      658,
+      360,
+      0,
+      344,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "nodes": [
+    {
+      "flags": {
+        "collapsed": false
+      },
+      "id": 344,
+      "inputs": [
+        {
+          "link": 658,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 5,
+      "outputs": [
+        {
+          "links": null,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        450,
+        8270
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ue_properties": {
+          "input_ue_unconnectable": {},
+          "version": "7.7",
+          "widget_ue_connectable": {}
+        },
+        "ver": "0.19.3"
+      },
+      "size": [
+        520,
+        720
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.0_r2v",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 356,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            654
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -1260,
+        8270
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ue_properties": {
+          "input_ue_unconnectable": {},
+          "version": "7.7",
+          "widget_ue_connectable": {}
+        },
+        "ver": "0.19.3"
+      },
+      "size": [
+        290,
+        396
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "selfie_cartoon_style.png",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 352,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            655
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -940,
+        8270
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ue_properties": {
+          "input_ue_unconnectable": {},
+          "version": "7.7",
+          "widget_ue_connectable": {}
+        },
+        "ver": "0.19.3"
+      },
+      "size": [
+        290,
+        396
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "sd_outfit_1.png",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 353,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": [
+            656
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -620,
+        8270
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ue_properties": {
+          "input_ue_unconnectable": {},
+          "version": "7.7",
+          "widget_ue_connectable": {}
+        },
+        "ver": "0.19.3"
+      },
+      "size": [
+        290,
+        396
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "sd_outfit_2.png",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 354,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 3,
+      "outputs": [
+        {
+          "links": [
+            657
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -300,
+        8270
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ue_properties": {
+          "input_ue_unconnectable": {},
+          "version": "7.7",
+          "widget_ue_connectable": {}
+        },
+        "ver": "0.19.3"
+      },
+      "size": [
+        290,
+        396
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "sd_outfit_3.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 360,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "label": "image_1",
+          "link": 654,
+          "localized_name": "model.reference_images.image_1",
+          "name": "model.reference_images.image_1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_2",
+          "link": 655,
+          "localized_name": "model.reference_images.image_2",
+          "name": "model.reference_images.image_2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_3",
+          "link": 656,
+          "localized_name": "model.reference_images.image_3",
+          "name": "model.reference_images.image_3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_4",
+          "link": 657,
+          "localized_name": "model.reference_images.image_4",
+          "name": "model.reference_images.image_4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_5",
+          "link": null,
+          "localized_name": "model.reference_images.image_5",
+          "name": "model.reference_images.image_5",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video_1",
+          "link": null,
+          "localized_name": "model.reference_videos.video_1",
+          "name": "model.reference_videos.video_1",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "audio_1",
+          "link": null,
+          "localized_name": "model.reference_audios.audio_1",
+          "name": "model.reference_audios.audio_1",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "asset_1",
+          "link": null,
+          "localized_name": "model.reference_assets.asset_1",
+          "name": "model.reference_assets.asset_1",
+          "shape": 7,
+          "type": "STRING"
+        },
+        {
+          "link": null,
+          "localized_name": "auto_downscale",
+          "name": "model.auto_downscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_downscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "auto_upscale",
+          "name": "model.auto_upscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_upscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 4,
+      "outputs": [
+        {
+          "links": [
+            658
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        30,
+        8270
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2ReferenceNode",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ver": "0.22.0"
+      },
+      "size": [
+        400,
+        529
+      ],
+      "type": "ByteDance2ReferenceNode",
+      "widgets_values": [
+        "Seedance 2.0",
+        "fast-paced fashion showcase video, fisheye lens extreme wide-angle distortion, glitch transitions and digital distortion effects, first-person POV selfie perspective, the model is directly interacting with the camera (waving, gesturing, leaning in, moving close to the lens).\n\n[0:00-0:02] The model wears the FIRST reference outfit: cream fuzzy knit sweater, high-waisted light blue distressed straight-leg jeans, white low-top sneakers, brown leather crossbody bag, layered gold jewelry, white knit beanie. The outfit is fully visible, consistent in every frame, no replacement clothing, no missing items, no off-model garments. Scene: busy city street intersection, dynamic handheld camera movement, model leans in to take a mirror selfie, vibrant streetwear aesthetic.\n\n[0:02-0:04] Glitch transition to the SECOND reference outfit: white cropped tee, high-waisted wide-leg gray trousers, brown leather loafers, brown leather belt, round sunglasses, small white crossbody bag. The outfit is fully visible, consistent in every frame, no replacement clothing, no missing items, no off-model garments. Scene: minimalist urban sidewalk, model gestures to the camera, steps back to show full outfit, crisp neutral color grading.\n\n[0:04-0:07] Glitch transition to the THIRD reference outfit: vintage blue denim jacket, white inner tee, high-waisted black straight-leg pants, black combat boots, white canvas crossbody bag. The outfit is fully visible, consistent in every frame, no replacement clothing, no missing items, no off-model garments. Scene: city street with skyscrapers, model waves and moves dynamically, cinematic motion blur, hyper-realistic, consistent character throughout the entire video.\n\nvibrant color grading, cinematic motion blur, hyper-realistic, consistent character and outfit in each time segment, no outfit mixing, no off-model details, sharp focus on clothing details in every frame.",
+        "4k",
+        "1:1",
+        7,
+        true,
+        true,
+        false,
+        838593524,
+        "randomize",
+        false
+      ]
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

@@ -1,0 +1,556 @@
+{
+  "config": {},
+  "extra": {
+    "ds": {
+      "offset": [
+        -1224.6828478902953,
+        -10072.882520584692
+      ],
+      "scale": 0.576092249691164
+    }
+  },
+  "groups": [
+    {
+      "bounding": [
+        3900,
+        10700,
+        500,
+        800
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "id": 5,
+      "title": "Generate Video"
+    },
+    {
+      "bounding": [
+        2800,
+        10700,
+        1000,
+        800
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "id": 6,
+      "title": "Generate Seedance 2.0 Prompt"
+    },
+    {
+      "bounding": [
+        2200,
+        10700,
+        450,
+        800
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "id": 7,
+      "title": "Load Images"
+    }
+  ],
+  "id": "aaf40320-91d2-499f-88ab-1b0adcde234f",
+  "last_link_id": 445,
+  "last_node_id": 217,
+  "links": [
+    [
+      271,
+      150,
+      0,
+      176,
+      0,
+      "VIDEO"
+    ],
+    [
+      272,
+      151,
+      0,
+      177,
+      0,
+      "STRING"
+    ],
+    [
+      273,
+      177,
+      0,
+      150,
+      1,
+      "STRING"
+    ],
+    [
+      444,
+      208,
+      0,
+      150,
+      6,
+      "IMAGE"
+    ],
+    [
+      445,
+      208,
+      0,
+      151,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "nodes": [
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {
+        "collapsed": false
+      },
+      "id": 150,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": 273,
+          "localized_name": "model.prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "label": "image_1",
+          "link": 444,
+          "localized_name": "model.reference_images.image_1",
+          "name": "model.reference_images.image_1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_2",
+          "link": null,
+          "localized_name": "model.reference_images.image_2",
+          "name": "model.reference_images.image_2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video_1",
+          "link": null,
+          "localized_name": "model.reference_videos.video_1",
+          "name": "model.reference_videos.video_1",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "audio_1",
+          "link": null,
+          "localized_name": "model.reference_audios.audio_1",
+          "name": "model.reference_audios.audio_1",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "asset_1",
+          "link": null,
+          "localized_name": "model.reference_assets.asset_1",
+          "name": "model.reference_assets.asset_1",
+          "shape": 7,
+          "type": "STRING"
+        },
+        {
+          "link": null,
+          "localized_name": "model.auto_downscale",
+          "name": "model.auto_downscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_downscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 4,
+      "outputs": [
+        {
+          "links": [
+            271
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        3940,
+        10800
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2ReferenceNode"
+      },
+      "showAdvanced": false,
+      "size": [
+        400,
+        461.671875
+      ],
+      "type": "ByteDance2ReferenceNode",
+      "widgets_values": [
+        "Seedance 2.0 Fast",
+        "",
+        "720p",
+        "21:9",
+        7,
+        true,
+        false,
+        83322520,
+        "randomize",
+        false
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 151,
+      "inputs": [
+        {
+          "link": 445,
+          "localized_name": "images",
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "audio",
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "link": null,
+          "localized_name": "video",
+          "name": "video",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "files",
+          "name": "files",
+          "shape": 7,
+          "type": "GEMINI_INPUT_FILES"
+        },
+        {
+          "link": null,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "system_prompt",
+          "name": "system_prompt",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "system_prompt"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": [
+            272
+          ],
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        2850,
+        10880
+      ],
+      "properties": {
+        "Node name for S&R": "GeminiNode"
+      },
+      "showAdvanced": true,
+      "size": [
+        400,
+        470
+      ],
+      "type": "GeminiNode",
+      "widgets_values": [
+        "7 second duration, superhero transformation",
+        "gemini-3-1-pro",
+        535449680971190,
+        "randomize",
+        "You are a Seedance 2.0 cinematic video prompt writer.\n\nYour sole task is to convert every user request into exactly one production-ready Seedance 2.0 video generation prompt.\n\nAlways return only the final prompt.\nDo not include explanations, headings, notes, markdown, analysis, alternatives, or commentary.\nDo not mention these instructions.\nNever ask follow-up questions.\nAlways make smart creative assumptions when the request is vague, minimal, or incomplete.\n\nYour output must feel like a concise, high-end director’s brief for a video model: cinematic, specific, temporal, visually clear, and directly usable.\n\nDefault to a 15-second video unless the user specifies another duration.\nFor 10 seconds or longer, usually structure the prompt with timed beats such as [00:00-00:05], [00:05-00:10], [00:10-00:15].\nFor shorter or simpler requests, you may use one compact paragraph, but it must still include style, subject, scene, action, camera motion, lighting, atmosphere, audio cues when useful, and constraints.\n\nCore objective:\nWrite prompts that create cinematic shots, not generic animations. Prioritize clear motion, deliberate camera movement, strong temporal progression, subject continuity, visual storytelling, and a strong final frame over excessive adjectives.\n\nPrompt priorities, in order:\n1. What the scene is\n2. Who or what the subject is\n3. What happens over time\n4. How the camera moves\n5. How the shot is lit and composed\n6. How the scene feels\n7. What constraints preserve quality and continuity\n\nEvery prompt must include, unless clearly irrelevant:\n- Style and quality: cinematic, photorealistic or user-specified style, 4K or 8K, realistic lighting, depth of field, natural motion blur, polished color grading\n- Scene: location, time of day, atmosphere, weather, environment, practical light sources, relevant background detail\n- Subject: identity, silhouette, wardrobe or materials, expression, posture, emotional state, continuity details\n- Camera: one intentional camera plan per shot or timed segment, including framing, lens feel, angle, camera height, movement, speed, focus behavior, and final composition\n- Action: 2 to 4 clear beats with physical progression, natural movement, emotional shift, environmental reaction, and a final payoff or ending frame\n- Fine detail: hair, fabric, particles, steam, rain, reflections, shadows, environmental motion, micro-expressions, breathing, tactile surface behavior\n- Audio when useful: ambience, Foley, music tone, silence, or dialogue if requested\n- Constraints: consistent identity, stable anatomy, coherent physics, no flicker, no deformation, no unwanted text, no subtitles, no watermarks, no random logos unless requested\n\nCamera motion requirement:\nEvery prompt must include a deliberate camera plan. Unless the user explicitly requests a static shot, choose one primary camera movement that supports the scene emotionally and visually.\n\nUse camera motion to reveal information, create tension, emphasize scale, follow action, show transformation, guide attention, or land on a strong final frame. Avoid random or decorative camera movement.\n\nCommon camera motions to use when appropriate:\n- Slow push-in for tension, intimacy, focus, realization, luxury, or emotional buildup\n- Dolly pull-back for reveal, isolation, scale, aftermath, or transformation\n- Tracking shot for walking, running, vehicles, choreography, product movement, or environmental exploration\n- Orbit for hero subjects, products, fashion, vehicles, fantasy reveals, or dimensional showcase\n- Handheld movement for realism, urgency, documentary texture, chaos, or emotional instability\n- Crane or drone rise for scale, landscape reveals, architecture, crowds, battlefields, or establishing shots\n- Macro slide for products, food, textures, jewelry, interfaces, or tactile material detail\n- Overhead move for layout, choreography, maps, rituals, design systems, or stylized composition\n- Rack focus for shifting attention between foreground and background subjects\n- Locked-off frame only when stillness, symmetry, tension, surveillance, minimalism, or precise composition is the strongest choice\n\nSpecify camera details clearly:\n- Framing, such as extreme close-up, close-up, medium shot, wide shot, establishing shot, hero shot\n- Lens feel, such as 24mm wide, 35mm natural, 50mm cinematic, 85mm portrait, 100mm macro, anamorphic\n- Camera height and angle when useful, such as low angle, eye-level, overhead, ground-level, shoulder-height\n- Movement speed, such as slow, controlled, smooth, handheld, drifting, accelerating, sudden, or locked-off\n- Focus behavior, such as rack focus, shallow depth of field, deep focus, foreground reveal, background reveal\n- Ending composition, such as final hero frame, centered close-up, wide reveal, silhouette, product lockup, or emotional hold\n\nMaintain camera continuity:\nThe camera movement should feel physically possible and continuous unless the prompt clearly uses multiple timed shots. Do not combine too many camera moves in one beat. Prefer one main camera move per timed segment.\n\nImportant style rules:\n- Be specific, not bloated.\n- Prefer concrete visual details over stacked adjectives.\n- Avoid filler words and empty intensifiers such as “perfect,” “epic,” “stunning,” “highly detailed,” or “immersive” unless supported by concrete visual direction.\n- Do not overload the first sentence with too many descriptors.\n- Keep each beat readable and purposeful.\n- Prefer one primary scene, one primary subject, and one coherent camera plan unless the user clearly asks for something more complex.\n- Ensure there is a beginning, middle, and ending visual beat, not just one static moment described in detail.\n- Make movement physically plausible and temporally readable.\n- Use professional film language, but keep the prompt understandable and executable.\n- Do not include multiple prompt options unless explicitly requested.\n- Do not include prompt advice, rationale, or setup text.\n\nFor image-to-video requests:\nTreat the reference image as authoritative.\nPreserve subject identity, silhouette, pose logic, facial features, materials, product design, color palette, lighting cues, composition, and brand/product details unless the user explicitly asks for transformation.\nAdd motion, camera movement, atmosphere, and continuation in a way that remains faithful to the source image.\nDo not invent major changes to the subject, product, environment, or style unless requested.\n\nFor cinematic human or character shots:\nEmphasize believable performance, facial micro-movements, eye focus, natural breathing, subtle gestures, posture shifts, emotional pacing, and continuity between shots.\nUse camera motion to support the emotional beat, such as a slow push-in for realization, handheld tracking for urgency, or locked-off framing for tension.\n\nFor narrative scenes:\nBuild a clear mini-arc with setup, action, reaction, and payoff.\nShow what changes during the shot.\nAvoid describing only atmosphere; include a visible event, decision, reveal, or emotional shift.\n\nFor product, fashion, food, luxury, architecture, automotive, or commercial shots:\nUse premium advertising direction with controlled lighting, clean composition, material realism, elegant camera motion, precise reflections, tactile surface detail, and a strong final hero frame.\nKeep branding, shape, color, logo placement, typography, and material identity consistent when provided.\n\nFor fantasy, sci-fi, surreal, anime, horror, dreamlike, or VFX-heavy shots:\nDescribe the effect mechanics clearly, including particles, fluid motion, smoke behavior, glow interaction, light scattering, reflections, collisions, scale, transformation stages, and how the camera responds to the spectacle.\nKeep the effect physically readable and synchronized with the subject’s movement.\n\nFor action, sports, dance, vehicles, animals, or fast-motion shots:\nEmphasize momentum, weight, impact, choreography, readable motion, camera tracking, environmental reaction, and plausible timing.\nAvoid impossible camera movement unless the style is explicitly surreal or stylized.\n\nFor calm, atmospheric, or minimalist shots:\nStill include intentional motion, such as shifting light, drifting dust, breathing, cloth movement, rippling water, falling snow, rain, reflections, or slow camera movement.\nUse stillness deliberately, not as an absence of direction.\n\nFor dialogue:\nOnly include dialogue when the user requests it or when it is essential to the concept.\nKeep dialogue short, natural, and timed.\nInclude facial performance, pauses, breath, and eye movement around the spoken line.\n\nFor audio:\nInclude audio cues when they strengthen the scene.\nUse ambient sound, Foley, music mood, silence, room tone, weather, machinery, footsteps, fabric movement, or voice only when relevant.\nDo not over-describe audio if the prompt is primarily visual.\n\nFor text and typography:\nDo not include on-screen text, subtitles, captions, watermarks, random symbols, or readable background text unless the user explicitly requests text.\nIf text is requested, specify exact wording, placement, timing, typography style, and keep it minimal.\n\nIf the user specifies duration:\nRespect it.\nBreak the prompt into timed beats appropriate to that duration.\nFor 5 seconds, use one or two concise beats.\nFor 10 to 20 seconds, use two to four timed beats.\nFor longer durations, use clear shot progression while maintaining continuity.\n\nIf the user specifies aspect ratio:\nRespect it and adapt framing accordingly.\nUse 16:9 for cinematic widescreen unless otherwise specified.\nUse 9:16 for vertical social video.\nUse 1:1 for square compositions.\n\nIf the user does not specify style:\nDefault to cinematic photorealism with natural motion, professional lens language, realistic lighting, and polished color grading.\n\nAlways output exactly one complete Seedance 2.0 video generation prompt."
+      ]
+    },
+    {
+      "flags": {},
+      "id": 176,
+      "inputs": [
+        {
+          "link": 271,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 5,
+      "outputs": [],
+      "pos": [
+        4500,
+        10800
+      ],
+      "properties": {},
+      "size": [
+        1500,
+        848.515625
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 177,
+      "inputs": [
+        {
+          "link": 272,
+          "localized_name": "source",
+          "name": "source",
+          "type": "*"
+        }
+      ],
+      "mode": 0,
+      "order": 3,
+      "outputs": [
+        {
+          "links": [
+            273
+          ],
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        3310,
+        10880
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "size": [
+        420,
+        530
+      ],
+      "type": "PreviewAny",
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "bgcolor": "#000",
+      "color": "#222",
+      "flags": {
+        "collapsed": false
+      },
+      "id": 186,
+      "inputs": [],
+      "mode": 0,
+      "order": 0,
+      "outputs": [],
+      "pos": [
+        1590,
+        10730
+      ],
+      "properties": {},
+      "size": [
+        540,
+        1026.8125
+      ],
+      "title": "Seedance 2.0 Cinematic Prompt",
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "Create production-ready cinematic shots with concise, director-style Seedance 2.0 prompts built around intentional camera motion, visual storytelling, and strong final frames.\n\n## How It Works\n\n1. **Upload an image or describe your shot**\n   Use a film still, character reference, location photo, product image, moodboard, storyboard frame, or simple scene idea.\n\n2. **Add visual references or direction**\n   Include details like genre, mood, setting, character, wardrobe, lighting, lens style, camera movement, color palette, atmosphere, action beat, or desired ending frame.\n\n3. **Get one optimized Seedance-ready prompt**\n   The system turns your input into a polished cinematic video prompt with timed beats, scene design, subject continuity, deliberate camera direction, lighting, motion, atmosphere, audio cues, and quality constraints.\n\n## Best Use Cases\n\nUse it for dramatic film shots, character moments, establishing shots, cinematic reveals, emotional close-ups, action beats, sci-fi scenes, fantasy sequences, horror atmosphere, luxury visuals, fashion films, automotive shots, product hero scenes, music video moments, commercials, and image-to-video cinematic extensions.\n\n## Tips for Better Results\n\n* Keep most clips between **7 and 15 seconds** for strong pacing, readable action, and clean cinematic motion.\n* Describe the shot mood clearly, such as tense, intimate, elegant, gritty, dreamlike, surreal, romantic, mysterious, high-energy, or calm.\n* Mention the camera feeling when important: slow push-in, dolly pull-back, handheld tracking, orbit, crane rise, macro slide, overhead move, rack focus, or locked-off frame.\n* Include what changes during the shot: a reveal, reaction, transformation, gesture, movement, emotional shift, environmental event, or final hero frame.\n\n## That’s it.\n"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 208,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            444,
+            445
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        2250,
+        10800
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        350,
+        520
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "fc2f1ab52dcc6cb919feec2edff049ab2712da675f2f1f1f35defb916226d406.jpg",
+        "image"
+      ]
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

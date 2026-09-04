@@ -1,0 +1,404 @@
+{
+  "config": {},
+  "extra": {
+    "ds": {
+      "offset": [
+        758.3597212897405,
+        -7524.69256450512
+      ],
+      "scale": 0.8276109797347861
+    },
+    "frontendVersion": "1.48.7"
+  },
+  "groups": [],
+  "id": "7a06a6de-067d-4d41-b7bf-7d6add20ec8c",
+  "last_link_id": 33,
+  "last_node_id": 41,
+  "links": [
+    [
+      29,
+      38,
+      0,
+      16,
+      0,
+      "VIDEO"
+    ],
+    [
+      32,
+      40,
+      0,
+      38,
+      1,
+      "IMAGE"
+    ],
+    [
+      33,
+      41,
+      0,
+      38,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "nodes": [
+    {
+      "flags": {},
+      "id": 16,
+      "inputs": [
+        {
+          "link": 29,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 3,
+      "outputs": [
+        {
+          "links": null,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        385.96875,
+        7820
+      ],
+      "properties": {},
+      "size": [
+        709.984375,
+        126
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.5_flf2v",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "codec": "auto",
+        "filename_prefix": "video/Seedance2.5_flf2v",
+        "format": "auto"
+      }
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 38,
+      "inputs": [
+        {
+          "link": 33,
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": 32,
+          "localized_name": "last_frame",
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.output_format",
+          "name": "model.output_format",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.output_format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "first_frame_asset_id",
+          "name": "first_frame_asset_id",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "first_frame_asset_id"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "last_frame_asset_id",
+          "name": "last_frame_asset_id",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "last_frame_asset_id"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": [
+            29
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        -112.015625,
+        7820
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2FirstLastFrameNode"
+      },
+      "size": [
+        449.984375,
+        391
+      ],
+      "type": "ByteDance2FirstLastFrameNode",
+      "widgets_values": [
+        "Seedance 2.5",
+        "The input images are the first and last frames: @image1 is the wide pool view before the activity starts, @image2 is the final top-down view. Smooth cinematic transition, 5 seconds. [0-1.5s] Starting from the first frame, the camera pushes in from the wide view toward the quiet pool, people standing around the edges, activity not yet started. [1.5-3.5s] Swimmers begin jumping into the pool one after another, splashes erupting, the crowd getting excited and lively, many people in swimsuits leaping in from all sides. [3.5-5s] The camera rises to a top-down view as everyone plays in the water, the pool packed and splashing, landing exactly on the last frame image. No black frames, no jump cuts.\n",
+        "720p",
+        5,
+        true,
+        "mp4",
+        0,
+        "randomize",
+        false,
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "control_after_generate": "randomize",
+        "first_frame_asset_id": "",
+        "last_frame_asset_id": "",
+        "model": "Seedance 2.5",
+        "model.duration": 5,
+        "model.generate_audio": true,
+        "model.output_format": "mp4",
+        "model.prompt": "The input images are the first and last frames: @image1 is the wide pool view before the activity starts, @image2 is the final top-down view. Smooth cinematic transition, 5 seconds. [0-1.5s] Starting from the first frame, the camera pushes in from the wide view toward the quiet pool, people standing around the edges, activity not yet started. [1.5-3.5s] Swimmers begin jumping into the pool one after another, splashes erupting, the crowd getting excited and lively, many people in swimsuits leaping in from all sides. [3.5-5s] The camera rises to a top-down view as everyone plays in the water, the pool packed and splashing, landing exactly on the last frame image. No black frames, no jump cuts.\n",
+        "model.resolution": "720p",
+        "seed": 0,
+        "watermark": false
+      }
+    },
+    {
+      "flags": {},
+      "id": 40,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            32
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -450,
+        8270
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        289.984375,
+        349.984375
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "pool_end_frame.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "pool_end_frame.png",
+        "upload": "image"
+      }
+    },
+    {
+      "flags": {},
+      "id": 41,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            33
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -450,
+        7820
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        289.984375,
+        349.984375
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "pool_start_frame.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "pool_start_frame.png",
+        "upload": "image"
+      }
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

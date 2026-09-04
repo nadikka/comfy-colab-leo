@@ -1,0 +1,382 @@
+{
+  "config": {},
+  "extra": {
+    "ds": {
+      "offset": [
+        588.3333333333334,
+        -7569.878858024691
+      ],
+      "scale": 0.8697986577181208
+    },
+    "frontendVersion": "1.47.11"
+  },
+  "groups": [],
+  "id": "7a06a6de-067d-4d41-b7bf-7d6add20ec8c",
+  "last_link_id": 17,
+  "last_node_id": 23,
+  "links": [
+    [
+      10,
+      12,
+      0,
+      15,
+      8,
+      "IMAGE"
+    ],
+    [
+      11,
+      15,
+      0,
+      16,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "nodes": [
+    {
+      "flags": {},
+      "id": 12,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            10
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -330,
+        7930
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        290,
+        350
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "medusa_poster.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "medusa_poster.png",
+        "upload": "image"
+      }
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 15,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.video_editing",
+          "name": "model.video_editing",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.video_editing"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.output_format",
+          "name": "model.output_format",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.output_format"
+          }
+        },
+        {
+          "label": "image_1",
+          "link": 10,
+          "localized_name": "model.reference_images.image_1",
+          "name": "model.reference_images.image_1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_2",
+          "link": null,
+          "localized_name": "model.reference_images.image_2",
+          "name": "model.reference_images.image_2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video_1",
+          "link": null,
+          "localized_name": "model.reference_videos.video_1",
+          "name": "model.reference_videos.video_1",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "audio_1",
+          "link": null,
+          "localized_name": "model.reference_audios.audio_1",
+          "name": "model.reference_audios.audio_1",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "asset_1",
+          "link": null,
+          "localized_name": "model.reference_assets.asset_1",
+          "name": "model.reference_assets.asset_1",
+          "shape": 7,
+          "type": "STRING"
+        },
+        {
+          "link": null,
+          "localized_name": "auto_downscale",
+          "name": "model.auto_downscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_downscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "auto_upscale",
+          "name": "model.auto_upscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_upscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            11
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        10,
+        7930
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2ReferenceNode"
+      },
+      "size": [
+        400,
+        463
+      ],
+      "type": "ByteDance2ReferenceNode",
+      "widgets_values": [
+        "Seedance 2.5",
+        "The crimson marble Medusa statue comes alive, opening her eyes and looking at the camera while the red typography in the background simultaneously dissolves away letter by letter into drifting red particles. The snakes in her hair rise and sway. Both the statue and the background text animate together, poster layout otherwise unchanged, cinematic, no black frames.",
+        "720p",
+        "adaptive",
+        5,
+        true,
+        false,
+        "mp4",
+        true,
+        false,
+        0,
+        "randomize",
+        false
+      ],
+      "widgets_values_named": {
+        "control_after_generate": "randomize",
+        "model": "Seedance 2.5",
+        "model.auto_downscale": true,
+        "model.auto_upscale": false,
+        "model.duration": 5,
+        "model.generate_audio": true,
+        "model.output_format": "mp4",
+        "model.prompt": "The crimson marble Medusa statue comes alive, opening her eyes and looking at the camera while the red typography in the background simultaneously dissolves away letter by letter into drifting red particles. The snakes in her hair rise and sway. Both the statue and the background text animate together, poster layout otherwise unchanged, cinematic, no black frames.",
+        "model.ratio": "adaptive",
+        "model.resolution": "720p",
+        "model.video_editing": false,
+        "seed": 0,
+        "watermark": false
+      }
+    },
+    {
+      "flags": {},
+      "id": 16,
+      "inputs": [
+        {
+          "link": 11,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": null,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        450,
+        7930
+      ],
+      "properties": {},
+      "size": [
+        690,
+        126
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.5_r2v",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "codec": "auto",
+        "filename_prefix": "video/Seedance2.5_r2v",
+        "format": "auto"
+      }
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

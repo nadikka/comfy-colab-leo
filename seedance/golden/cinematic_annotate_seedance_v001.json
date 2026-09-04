@@ -1,0 +1,736 @@
+{
+  "config": {},
+  "extra": {
+    "ds": {
+      "offset": [
+        773.3360899009563,
+        877.3259422288718
+      ],
+      "scale": 0.5570968971263419
+    }
+  },
+  "groups": [
+    {
+      "bounding": [
+        -1200,
+        -500,
+        1380,
+        700
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "id": 1,
+      "title": "Annotate Image"
+    },
+    {
+      "bounding": [
+        304.97588900690846,
+        -203.0191073782451,
+        950,
+        600
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "id": 2,
+      "title": "Prompt"
+    },
+    {
+      "bounding": [
+        1400,
+        -500,
+        1750,
+        1100
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "id": 3,
+      "title": "Seedance 2.0"
+    }
+  ],
+  "id": "4c4601bb-9203-4a31-b9a8-1022007fade8",
+  "last_link_id": 16,
+  "last_node_id": 13,
+  "links": [
+    [
+      7,
+      3,
+      0,
+      4,
+      0,
+      "STRING"
+    ],
+    [
+      8,
+      4,
+      0,
+      5,
+      1,
+      "STRING"
+    ],
+    [
+      10,
+      5,
+      0,
+      6,
+      0,
+      "VIDEO"
+    ],
+    [
+      13,
+      1,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      1,
+      0,
+      5,
+      6,
+      "IMAGE"
+    ],
+    [
+      15,
+      8,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      16,
+      8,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "nodes": [
+    {
+      "flags": {},
+      "id": 1,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            13,
+            14
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -1160,
+        -400
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        390,
+        470
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "b8b1002d47fd8acd6bb3d2ee604ed223beaea8dc00c1ed6c33b58fc8dd91ac96.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 3,
+      "inputs": [
+        {
+          "link": 15,
+          "localized_name": "images",
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "audio",
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "link": null,
+          "localized_name": "video",
+          "name": "video",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "files",
+          "name": "files",
+          "shape": 7,
+          "type": "GEMINI_INPUT_FILES"
+        },
+        {
+          "link": null,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "system_prompt",
+          "name": "system_prompt",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "system_prompt"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 3,
+      "outputs": [
+        {
+          "links": [
+            7
+          ],
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        350,
+        -100
+      ],
+      "properties": {
+        "Node name for S&R": "GeminiNode"
+      },
+      "showAdvanced": true,
+      "size": [
+        400,
+        437.8125
+      ],
+      "type": "GeminiNode",
+      "widgets_values": [
+        "Read the uploaded marked-up image as a motion storyboard. The red and yellow marks are annotations only, not visual content for the final video. Turn the annotations into one concise Seedance 2.0 reference-to-video prompt for a clean cinematic shot. Include the camera path, timing, rack focus, subject continuity, lighting, and constraints. Return only the final prompt.",
+        "gemini-3-1-flash-lite",
+        974485274560564,
+        "randomize",
+        "You are a production video prompt writer for Seedance 2.0. Interpret visual markups, arrows, boxes, labels, and notes as camera and motion direction. Do not mention that marks should appear. Always preserve the clean reference frame's subject, environment, composition, identity, and object layout. Return exactly one concise prompt, no markdown, no explanation."
+      ]
+    },
+    {
+      "flags": {},
+      "id": 4,
+      "inputs": [
+        {
+          "link": 7,
+          "localized_name": "source",
+          "name": "source",
+          "type": "*"
+        }
+      ],
+      "mode": 0,
+      "order": 5,
+      "outputs": [
+        {
+          "links": [
+            8
+          ],
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        830,
+        -100
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "size": [
+        370,
+        360
+      ],
+      "type": "PreviewAny",
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 5,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": 8,
+          "localized_name": "prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "label": "image_1",
+          "link": 14,
+          "localized_name": "model.reference_images.image_1",
+          "name": "model.reference_images.image_1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_2",
+          "link": null,
+          "localized_name": "model.reference_images.image_2",
+          "name": "model.reference_images.image_2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video_1",
+          "link": null,
+          "localized_name": "model.reference_videos.video_1",
+          "name": "model.reference_videos.video_1",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "audio_1",
+          "link": null,
+          "localized_name": "model.reference_audios.audio_1",
+          "name": "model.reference_audios.audio_1",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "asset_1",
+          "link": null,
+          "localized_name": "model.reference_assets.asset_1",
+          "name": "model.reference_assets.asset_1",
+          "shape": 7,
+          "type": "STRING"
+        },
+        {
+          "link": null,
+          "localized_name": "auto_downscale",
+          "name": "model.auto_downscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_downscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.auto_upscale",
+          "name": "model.auto_upscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_upscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 6,
+      "outputs": [
+        {
+          "links": [
+            10
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        1450,
+        -400
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2ReferenceNode"
+      },
+      "size": [
+        400,
+        487.96875
+      ],
+      "type": "ByteDance2ReferenceNode",
+      "widgets_values": [
+        "Seedance 2.0",
+        "",
+        "720p",
+        "21:9",
+        7,
+        true,
+        false,
+        false,
+        744700400,
+        "randomize",
+        false
+      ]
+    },
+    {
+      "flags": {},
+      "id": 6,
+      "inputs": [
+        {
+          "link": 10,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 7,
+      "outputs": [],
+      "pos": [
+        1950,
+        -400
+      ],
+      "properties": {},
+      "size": [
+        1097.34375,
+        820.078125
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/camera_path_scribble_director",
+        "mp4",
+        "h264"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 8,
+      "inputs": [
+        {
+          "link": 13,
+          "localized_name": "images",
+          "name": "images",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "files",
+          "name": "files",
+          "shape": 7,
+          "type": "GEMINI_INPUT_FILES"
+        },
+        {
+          "link": null,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "aspect_ratio",
+          "name": "aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "aspect_ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "resolution",
+          "name": "resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "response_modalities",
+          "name": "response_modalities",
+          "type": "COMBO",
+          "widget": {
+            "name": "response_modalities"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "system_prompt",
+          "name": "system_prompt",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "system_prompt"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": [
+            15,
+            16
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        -700,
+        -400
+      ],
+      "properties": {
+        "Node name for S&R": "GeminiImage2Node"
+      },
+      "showAdvanced": true,
+      "size": [
+        400,
+        493.75
+      ],
+      "type": "GeminiImage2Node",
+      "widgets_values": [
+        "Using the provided image as the base frame, create a camera-path annotation image for a ComfyUI camera-path scribble/director workflow.\n\nShot intent:\n[describe desired motion here, e.g. low whip-push from foreground debris toward the subject, then slight upward arc]\n\nAdd:\n- a clear camera path arrow\n- a tracking box around the main subject\n- parallax arrows on foreground and background layers\n- a rack-focus guide\n- small labels for the intended movement\n\nPreserve the original image exactly except for the annotation overlay. Keep the same aspect ratio. Do not add new scene content.",
+        "Nano Banana 2 (Gemini 3.1 Flash Image)",
+        1052551550789391,
+        "randomize",
+        "21:9",
+        "4K",
+        "IMAGE+TEXT",
+        "You are a cinematic director markup generator for image-to-video workflows.\n\nYour job is to take the provided input image and create a second image that preserves the original scene while adding clear camera-path annotations on top of it.\n\nPreserve the source image composition, subject identity, environment, lighting, aspect ratio, framing, and major objects. Do not redesign the scene. Do not add new characters, vehicles, objects, logos, branding, captions, random text, or visual artifacts.\n\nAdd only director-style camera markup:\n- thin cyan and white hand-drawn arrows\n- camera path curves\n- subject tracking boxes\n- parallax arrows\n- rack-focus guides\n- impact or motion direction arrows where useful\n- short readable labels placed away from faces, hands, and the main action\n\nThe annotation image should look like a professional cinematic shot-blocking board, not an edge map, infographic, storyboard panel, UI screen, or poster.\n\nUse concise labels such as:\nLOW PUSH, DOLLY IN, WHIP PAN, TRACK SUBJECT, SIDE PARALLAX, FOREGROUND PARALLAX, RACK FOCUS, HOLD HORIZON, HOLD SKYLINE, IMPACT BEAT, REVEAL PATH.\n\nKeep the image photorealistic underneath the overlay. The final output must be the annotated image only."
+      ]
+    },
+    {
+      "flags": {},
+      "id": 10,
+      "inputs": [
+        {
+          "link": 16,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        }
+      ],
+      "mode": 0,
+      "order": 4,
+      "outputs": [],
+      "pos": [
+        -260,
+        -400
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "size": [
+        400,
+        430
+      ],
+      "type": "PreviewImage",
+      "widgets_values": []
+    },
+    {
+      "bgcolor": "#000",
+      "color": "#222",
+      "flags": {
+        "collapsed": false
+      },
+      "id": 13,
+      "inputs": [],
+      "mode": 0,
+      "order": 1,
+      "outputs": [],
+      "pos": [
+        -1800,
+        -470
+      ],
+      "properties": {},
+      "size": [
+        500,
+        770
+      ],
+      "title": "Cinematic Annotate",
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "Generate cinematic camera-path annotations from one image with **Cinematic Annotate**.\n\n## How It Works\n1. Upload a clean image\n2. Run **Cinematic Annotate**\n3. The system:\n    - Creates a director-style annotation with Nano Banana 2\n    - Converts the markup into a Seedance 2.0 motion prompt with Gemini\n    - Uses the original image as the clean video reference\n    - Saves the annotation image and final video\n\n## Tips\n- Use clear cinematic images with strong depth and motion potential\n- 21:9 works best for dramatic camera moves\n- Avoid text, logos, and cluttered subjects\n- The annotation is only a guide and will not appear in the video\n\n## That’s it.\n\nCamera blocking to video in ComfyUI with **Cinematic Annotate**."
+      ]
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

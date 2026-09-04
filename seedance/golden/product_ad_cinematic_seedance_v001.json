@@ -1,0 +1,2470 @@
+{
+  "config": {},
+  "definitions": {
+    "subgraphs": [
+      {
+        "config": {},
+        "extra": {
+          "workflowRendererVersion": "Vue-corrected"
+        },
+        "groups": [],
+        "id": "0e2c3eaa-706c-41fd-b300-b6bd9e84a0a4",
+        "inputNode": {
+          "bounding": [
+            2030,
+            740,
+            128,
+            108
+          ],
+          "id": -10
+        },
+        "inputs": [
+          {
+            "id": "82ade1a9-af57-484a-9765-c261a0b6ed1e",
+            "linkIds": [
+              108
+            ],
+            "localized_name": "input",
+            "name": "input",
+            "pos": [
+              2134,
+              764
+            ],
+            "type": "*"
+          },
+          {
+            "id": "90bd4542-8c87-4c40-a51d-dbf48b462a80",
+            "linkIds": [
+              109
+            ],
+            "localized_name": "input_1",
+            "name": "input_1",
+            "pos": [
+              2134,
+              784
+            ],
+            "type": "*"
+          },
+          {
+            "id": "4bd8bab0-2210-463f-a69d-dc7edeb7ee9a",
+            "linkIds": [
+              110
+            ],
+            "localized_name": "user_story",
+            "name": "user_story",
+            "pos": [
+              2134,
+              804
+            ],
+            "type": "STRING"
+          }
+        ],
+        "links": [
+          {
+            "id": 97,
+            "origin_id": 76,
+            "origin_slot": 0,
+            "target_id": 78,
+            "target_slot": 2,
+            "type": "STRING"
+          },
+          {
+            "id": 98,
+            "origin_id": 78,
+            "origin_slot": 0,
+            "target_id": 79,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 99,
+            "origin_id": 77,
+            "origin_slot": 0,
+            "target_id": 79,
+            "target_slot": 2,
+            "type": "STRING"
+          },
+          {
+            "id": 102,
+            "origin_id": 85,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 108,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 77,
+            "target_slot": 0,
+            "type": "*"
+          },
+          {
+            "id": 109,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 76,
+            "target_slot": 0,
+            "type": "*"
+          },
+          {
+            "id": 103,
+            "origin_id": 79,
+            "origin_slot": 0,
+            "target_id": 85,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 110,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 85,
+            "target_slot": 2,
+            "type": "STRING"
+          },
+          {
+            "id": 369,
+            "origin_id": 303,
+            "origin_slot": 0,
+            "target_id": 78,
+            "target_slot": 0,
+            "type": "STRING"
+          }
+        ],
+        "name": "Create Prompt",
+        "nodes": [
+          {
+            "flags": {},
+            "id": 76,
+            "inputs": [
+              {
+                "link": 109,
+                "localized_name": "input",
+                "name": "input",
+                "type": "*"
+              },
+              {
+                "link": null,
+                "localized_name": "prefix",
+                "name": "prefix",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "prefix"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "suffix",
+                "name": "suffix",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "suffix"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 1,
+            "outputs": [
+              {
+                "links": [
+                  97
+                ],
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING"
+              }
+            ],
+            "pos": [
+              2510,
+              960
+            ],
+            "properties": {
+              "Node name for S&R": "SomethingToString",
+              "cnr_id": "comfyui-kjnodes",
+              "ver": "c661baadd9683c0033cd2a6ad90157c6d099a6c2"
+            },
+            "size": [
+              230,
+              150
+            ],
+            "type": "SomethingToString",
+            "widgets_values": [
+              "",
+              ""
+            ]
+          },
+          {
+            "flags": {},
+            "id": 77,
+            "inputs": [
+              {
+                "link": 108,
+                "localized_name": "input",
+                "name": "input",
+                "type": "*"
+              },
+              {
+                "link": null,
+                "localized_name": "prefix",
+                "name": "prefix",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "prefix"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "suffix",
+                "name": "suffix",
+                "shape": 7,
+                "type": "STRING",
+                "widget": {
+                  "name": "suffix"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 2,
+            "outputs": [
+              {
+                "links": [
+                  99
+                ],
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING"
+              }
+            ],
+            "pos": [
+              2510,
+              740
+            ],
+            "properties": {
+              "Node name for S&R": "SomethingToString",
+              "cnr_id": "comfyui-kjnodes",
+              "ver": "c661baadd9683c0033cd2a6ad90157c6d099a6c2"
+            },
+            "size": [
+              230,
+              150
+            ],
+            "type": "SomethingToString",
+            "widgets_values": [
+              "",
+              ""
+            ]
+          },
+          {
+            "flags": {
+              "collapsed": true
+            },
+            "id": 78,
+            "inputs": [
+              {
+                "link": 369,
+                "localized_name": "string",
+                "name": "string",
+                "type": "STRING",
+                "widget": {
+                  "name": "string"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "regex_pattern",
+                "name": "regex_pattern",
+                "type": "STRING",
+                "widget": {
+                  "name": "regex_pattern"
+                }
+              },
+              {
+                "link": 97,
+                "localized_name": "replace",
+                "name": "replace",
+                "type": "STRING",
+                "widget": {
+                  "name": "replace"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "case_insensitive",
+                "name": "case_insensitive",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "case_insensitive"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "multiline",
+                "name": "multiline",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "multiline"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "dotall",
+                "name": "dotall",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "dotall"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "count",
+                "name": "count",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "count"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 3,
+            "outputs": [
+              {
+                "links": [
+                  98
+                ],
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING"
+              }
+            ],
+            "pos": [
+              2880,
+              770
+            ],
+            "properties": {
+              "Node name for S&R": "RegexReplace",
+              "cnr_id": "comfy-core",
+              "ver": "0.14.1"
+            },
+            "size": [
+              230,
+              40
+            ],
+            "type": "RegexReplace",
+            "widgets_values": [
+              "",
+              "{N_SHOTS}",
+              "",
+              true,
+              false,
+              false,
+              0
+            ]
+          },
+          {
+            "flags": {
+              "collapsed": true
+            },
+            "id": 79,
+            "inputs": [
+              {
+                "link": 98,
+                "localized_name": "string",
+                "name": "string",
+                "type": "STRING",
+                "widget": {
+                  "name": "string"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "regex_pattern",
+                "name": "regex_pattern",
+                "type": "STRING",
+                "widget": {
+                  "name": "regex_pattern"
+                }
+              },
+              {
+                "link": 99,
+                "localized_name": "replace",
+                "name": "replace",
+                "type": "STRING",
+                "widget": {
+                  "name": "replace"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "case_insensitive",
+                "name": "case_insensitive",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "case_insensitive"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "multiline",
+                "name": "multiline",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "multiline"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "dotall",
+                "name": "dotall",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "dotall"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "count",
+                "name": "count",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "count"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 4,
+            "outputs": [
+              {
+                "links": [
+                  103
+                ],
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING"
+              }
+            ],
+            "pos": [
+              2880,
+              820
+            ],
+            "properties": {
+              "Node name for S&R": "RegexReplace",
+              "cnr_id": "comfy-core",
+              "ver": "0.14.1"
+            },
+            "size": [
+              230,
+              40
+            ],
+            "type": "RegexReplace",
+            "widgets_values": [
+              "",
+              "{N_SECONDS}",
+              "",
+              true,
+              false,
+              false,
+              0
+            ]
+          },
+          {
+            "flags": {
+              "collapsed": false
+            },
+            "id": 85,
+            "inputs": [
+              {
+                "link": 103,
+                "localized_name": "string",
+                "name": "string",
+                "type": "STRING",
+                "widget": {
+                  "name": "string"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "regex_pattern",
+                "name": "regex_pattern",
+                "type": "STRING",
+                "widget": {
+                  "name": "regex_pattern"
+                }
+              },
+              {
+                "link": 110,
+                "localized_name": "replace",
+                "name": "replace",
+                "type": "STRING",
+                "widget": {
+                  "name": "replace"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "case_insensitive",
+                "name": "case_insensitive",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "case_insensitive"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "multiline",
+                "name": "multiline",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "multiline"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "dotall",
+                "name": "dotall",
+                "shape": 7,
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "dotall"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "count",
+                "name": "count",
+                "shape": 7,
+                "type": "INT",
+                "widget": {
+                  "name": "count"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 5,
+            "outputs": [
+              {
+                "links": [
+                  102
+                ],
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING"
+              }
+            ],
+            "pos": [
+              2880,
+              870
+            ],
+            "properties": {
+              "Node name for S&R": "RegexReplace",
+              "cnr_id": "comfy-core",
+              "ver": "0.14.1"
+            },
+            "size": [
+              230,
+              300
+            ],
+            "type": "RegexReplace",
+            "widgets_values": [
+              "",
+              "{USER_STORY}",
+              "",
+              true,
+              false,
+              false,
+              0
+            ]
+          },
+          {
+            "flags": {},
+            "id": 303,
+            "inputs": [
+              {
+                "link": null,
+                "localized_name": "value",
+                "name": "value",
+                "type": "STRING",
+                "widget": {
+                  "name": "value"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 0,
+            "outputs": [
+              {
+                "links": [
+                  369
+                ],
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING"
+              }
+            ],
+            "pos": [
+              2340,
+              460
+            ],
+            "properties": {
+              "Node name for S&R": "PrimitiveStringMultiline"
+            },
+            "size": [
+              400,
+              200
+            ],
+            "title": "Template User Prompt",
+            "type": "PrimitiveStringMultiline",
+            "widgets_values": [
+              "Using the attached reference images (image 1 is the hero/environment reference; any additional images are product detail references), create one multi-shot video prompt with {N_SHOTS} distinct shots. The total video duration is exactly {N_SECONDS} seconds.\n\nCreative direction from the user (may be empty): {USER_STORY}"
+            ]
+          }
+        ],
+        "outputNode": {
+          "bounding": [
+            3320,
+            760,
+            128,
+            68
+          ],
+          "id": -20
+        },
+        "outputs": [
+          {
+            "id": "c1b4bcfa-383b-4374-9539-ea110f61c80d",
+            "linkIds": [
+              102
+            ],
+            "localized_name": "STRING",
+            "name": "STRING",
+            "pos": [
+              3344,
+              784
+            ],
+            "type": "STRING"
+          }
+        ],
+        "revision": 0,
+        "state": {
+          "lastGroupId": 5,
+          "lastLinkId": 373,
+          "lastNodeId": 308,
+          "lastRerouteId": 15
+        },
+        "version": 1,
+        "widgets": []
+      },
+      {
+        "config": {},
+        "extra": {
+          "workflowRendererVersion": "Vue-corrected"
+        },
+        "groups": [],
+        "id": "2b10af74-c412-4c88-b235-6b170aed965c",
+        "inputNode": {
+          "bounding": [
+            2490,
+            -100,
+            128,
+            108
+          ],
+          "id": -10
+        },
+        "inputs": [
+          {
+            "id": "9c107ead-6e3a-4258-bbf0-ef4f2a164282",
+            "linkIds": [
+              230
+            ],
+            "localized_name": "string_a",
+            "name": "string_a",
+            "pos": [
+              2594,
+              -76
+            ],
+            "type": "STRING"
+          },
+          {
+            "id": "a67348a4-2c5d-4c25-ac8d-6ee9299c5c7f",
+            "linkIds": [
+              235
+            ],
+            "localized_name": "on_false",
+            "name": "on_false",
+            "pos": [
+              2594,
+              -56
+            ],
+            "type": "STRING"
+          },
+          {
+            "id": "abb43b87-98d8-4571-976f-7b6713f8ed21",
+            "linkIds": [
+              234
+            ],
+            "localized_name": "on_true",
+            "name": "on_true",
+            "pos": [
+              2594,
+              -36
+            ],
+            "type": "STRING"
+          }
+        ],
+        "links": [
+          {
+            "id": 231,
+            "origin_id": 113,
+            "origin_slot": 0,
+            "target_id": 112,
+            "target_slot": 1,
+            "type": "STRING"
+          },
+          {
+            "id": 233,
+            "origin_id": 112,
+            "origin_slot": 0,
+            "target_id": 111,
+            "target_slot": 2,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 230,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 112,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 235,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 111,
+            "target_slot": 0,
+            "type": "STRING"
+          },
+          {
+            "id": 234,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 111,
+            "target_slot": 1,
+            "type": "STRING"
+          },
+          {
+            "id": 237,
+            "origin_id": 111,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "STRING"
+          }
+        ],
+        "name": "Selected Prompt",
+        "nodes": [
+          {
+            "flags": {},
+            "id": 112,
+            "inputs": [
+              {
+                "link": 230,
+                "localized_name": "string_a",
+                "name": "string_a",
+                "type": "STRING",
+                "widget": {
+                  "name": "string_a"
+                }
+              },
+              {
+                "link": 231,
+                "localized_name": "string_b",
+                "name": "string_b",
+                "type": "STRING",
+                "widget": {
+                  "name": "string_b"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "mode",
+                "name": "mode",
+                "type": "COMBO",
+                "widget": {
+                  "name": "mode"
+                }
+              },
+              {
+                "link": null,
+                "localized_name": "case_sensitive",
+                "name": "case_sensitive",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "case_sensitive"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 2,
+            "outputs": [
+              {
+                "links": [
+                  233
+                ],
+                "localized_name": "BOOLEAN",
+                "name": "BOOLEAN",
+                "type": "BOOLEAN"
+              }
+            ],
+            "pos": [
+              2990,
+              100
+            ],
+            "properties": {
+              "Node name for S&R": "StringCompare",
+              "cnr_id": "comfy-core",
+              "ver": "0.14.1"
+            },
+            "size": [
+              230,
+              250
+            ],
+            "type": "StringCompare",
+            "widgets_values": [
+              "",
+              "",
+              "Equal",
+              false
+            ]
+          },
+          {
+            "flags": {},
+            "id": 111,
+            "inputs": [
+              {
+                "link": 235,
+                "localized_name": "on_false",
+                "name": "on_false",
+                "type": "STRING"
+              },
+              {
+                "link": 234,
+                "localized_name": "on_true",
+                "name": "on_true",
+                "type": "STRING"
+              },
+              {
+                "link": 233,
+                "localized_name": "switch",
+                "name": "switch",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "switch"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 1,
+            "outputs": [
+              {
+                "links": [
+                  237
+                ],
+                "localized_name": "output",
+                "name": "output",
+                "type": "STRING"
+              }
+            ],
+            "pos": [
+              3350,
+              -80
+            ],
+            "properties": {
+              "Node name for S&R": "ComfySwitchNode",
+              "cnr_id": "comfy-core",
+              "ver": "0.14.1"
+            },
+            "size": [
+              230,
+              130
+            ],
+            "type": "ComfySwitchNode",
+            "widgets_values": [
+              false
+            ]
+          },
+          {
+            "flags": {
+              "collapsed": true
+            },
+            "id": 113,
+            "inputs": [
+              {
+                "link": null,
+                "localized_name": "value",
+                "name": "value",
+                "type": "STRING",
+                "widget": {
+                  "name": "value"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 0,
+            "outputs": [
+              {
+                "links": [
+                  231
+                ],
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING"
+              }
+            ],
+            "pos": [
+              2710,
+              250
+            ],
+            "properties": {
+              "Node name for S&R": "PrimitiveString",
+              "cnr_id": "comfy-core",
+              "ver": "0.14.1"
+            },
+            "size": [
+              230,
+              40
+            ],
+            "title": "Empty String",
+            "type": "PrimitiveString",
+            "widgets_values": [
+              ""
+            ]
+          }
+        ],
+        "outputNode": {
+          "bounding": [
+            3730,
+            -80,
+            128,
+            68
+          ],
+          "id": -20
+        },
+        "outputs": [
+          {
+            "id": "9311d942-758c-421f-91d7-04aaeb2f2b64",
+            "linkIds": [
+              237
+            ],
+            "localized_name": "output",
+            "name": "output",
+            "pos": [
+              3754,
+              -56
+            ],
+            "type": "STRING"
+          }
+        ],
+        "revision": 0,
+        "state": {
+          "lastGroupId": 5,
+          "lastLinkId": 373,
+          "lastNodeId": 308,
+          "lastRerouteId": 15
+        },
+        "version": 1,
+        "widgets": []
+      }
+    ]
+  },
+  "extra": {
+    "VHS_KeepIntermediate": true,
+    "VHS_MetadataImage": true,
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "ds": {
+      "offset": [
+        1947.9460451847485,
+        -243.82589461297817
+      ],
+      "scale": 1.5524468650156726
+    },
+    "frontendVersion": "1.45.15",
+    "linkExtensions": [
+      {
+        "id": 1,
+        "parentId": 2
+      },
+      {
+        "id": 2,
+        "parentId": 4
+      },
+      {
+        "id": 3,
+        "parentId": 5
+      },
+      {
+        "id": 7,
+        "parentId": 12
+      },
+      {
+        "id": 8,
+        "parentId": 13
+      },
+      {
+        "id": 17,
+        "parentId": 8
+      },
+      {
+        "id": 371,
+        "parentId": 9
+      },
+      {
+        "id": 372,
+        "parentId": 10
+      },
+      {
+        "id": 373,
+        "parentId": 11
+      }
+    ],
+    "reroutes": [
+      {
+        "id": 1,
+        "linkIds": [
+          1,
+          371
+        ],
+        "pos": [
+          -250,
+          154
+        ]
+      },
+      {
+        "id": 2,
+        "linkIds": [
+          1,
+          371
+        ],
+        "parentId": 1,
+        "pos": [
+          1430,
+          154
+        ]
+      },
+      {
+        "id": 3,
+        "linkIds": [
+          2,
+          372
+        ],
+        "pos": [
+          300,
+          194
+        ]
+      },
+      {
+        "id": 4,
+        "linkIds": [
+          2,
+          372
+        ],
+        "parentId": 3,
+        "pos": [
+          1390,
+          194
+        ]
+      },
+      {
+        "id": 5,
+        "linkIds": [
+          3,
+          373
+        ],
+        "parentId": 6,
+        "pos": [
+          1340,
+          244
+        ]
+      },
+      {
+        "id": 6,
+        "linkIds": [
+          3,
+          373
+        ],
+        "pos": [
+          870,
+          254
+        ]
+      },
+      {
+        "id": 7,
+        "linkIds": [
+          17
+        ],
+        "pos": [
+          460,
+          1104
+        ]
+      },
+      {
+        "id": 8,
+        "linkIds": [
+          17
+        ],
+        "parentId": 7,
+        "pos": [
+          3070,
+          1104
+        ]
+      },
+      {
+        "id": 9,
+        "linkIds": [
+          371
+        ],
+        "parentId": 2,
+        "pos": [
+          3040,
+          144
+        ]
+      },
+      {
+        "id": 10,
+        "linkIds": [
+          372
+        ],
+        "parentId": 4,
+        "pos": [
+          3010,
+          194
+        ]
+      },
+      {
+        "id": 11,
+        "linkIds": [
+          373
+        ],
+        "parentId": 5,
+        "pos": [
+          2980,
+          244
+        ]
+      },
+      {
+        "id": 12,
+        "linkIds": [
+          7
+        ],
+        "parentId": 15,
+        "pos": [
+          870,
+          624
+        ]
+      },
+      {
+        "id": 13,
+        "linkIds": [
+          8
+        ],
+        "pos": [
+          870,
+          684
+        ]
+      },
+      {
+        "id": 14,
+        "linkIds": [
+          7
+        ],
+        "pos": [
+          530,
+          904
+        ]
+      },
+      {
+        "id": 15,
+        "linkIds": [
+          7
+        ],
+        "parentId": 14,
+        "pos": [
+          850,
+          894
+        ]
+      }
+    ],
+    "workflowRendererVersion": "Vue-corrected"
+  },
+  "groups": [
+    {
+      "bounding": [
+        -820,
+        300,
+        1650,
+        750
+      ],
+      "flags": {},
+      "id": 1,
+      "title": "1. Inputs"
+    },
+    {
+      "bounding": [
+        960,
+        300,
+        1450,
+        650
+      ],
+      "flags": {},
+      "id": 2,
+      "title": "2. LLM Prompt Generation (bypass after locking a prompt)"
+    },
+    {
+      "bounding": [
+        2520,
+        300,
+        470,
+        550
+      ],
+      "flags": {},
+      "id": 3,
+      "title": "3. Edit Prompt?"
+    },
+    {
+      "bounding": [
+        3110,
+        300,
+        1060,
+        1230
+      ],
+      "flags": {},
+      "id": 4,
+      "title": "4. Generate and Save Video"
+    }
+  ],
+  "id": "ef1283b9-79c1-429a-81dc-df71e9242fcc",
+  "last_link_id": 373,
+  "last_node_id": 308,
+  "links": [
+    [
+      1,
+      4,
+      0,
+      164,
+      2,
+      "IMAGE"
+    ],
+    [
+      2,
+      8,
+      0,
+      164,
+      3,
+      "IMAGE"
+    ],
+    [
+      3,
+      12,
+      0,
+      164,
+      4,
+      "IMAGE"
+    ],
+    [
+      7,
+      22,
+      0,
+      81,
+      0,
+      "INT"
+    ],
+    [
+      8,
+      23,
+      0,
+      81,
+      1,
+      "INT"
+    ],
+    [
+      9,
+      200,
+      0,
+      81,
+      2,
+      "STRING"
+    ],
+    [
+      10,
+      81,
+      0,
+      164,
+      0,
+      "STRING"
+    ],
+    [
+      11,
+      149,
+      0,
+      164,
+      14,
+      "STRING"
+    ],
+    [
+      12,
+      164,
+      0,
+      166,
+      0,
+      "STRING"
+    ],
+    [
+      14,
+      165,
+      0,
+      115,
+      0,
+      "STRING"
+    ],
+    [
+      15,
+      165,
+      0,
+      115,
+      1,
+      "STRING"
+    ],
+    [
+      16,
+      115,
+      0,
+      300,
+      1,
+      "STRING"
+    ],
+    [
+      17,
+      22,
+      0,
+      300,
+      4,
+      "INT"
+    ],
+    [
+      18,
+      300,
+      0,
+      89,
+      0,
+      "VIDEO"
+    ],
+    [
+      367,
+      166,
+      0,
+      115,
+      2,
+      "STRING"
+    ],
+    [
+      371,
+      4,
+      0,
+      300,
+      6,
+      "IMAGE"
+    ],
+    [
+      372,
+      8,
+      0,
+      300,
+      7,
+      "IMAGE"
+    ],
+    [
+      373,
+      12,
+      0,
+      300,
+      8,
+      "IMAGE"
+    ]
+  ],
+  "nodes": [
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {},
+      "id": 4,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            1,
+            371
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": [],
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -810,
+        370
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1"
+      },
+      "size": [
+        490,
+        500
+      ],
+      "title": "Load Start Frame Image",
+      "type": "LoadImage",
+      "widgets_values": [
+        "bd02dd0a0dec4112c32961639555fe035a7992e12e9ec95ea19e322e1844d512.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {
+        "collapsed": false
+      },
+      "id": 8,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            2,
+            372
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": [],
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -240,
+        370
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1"
+      },
+      "size": [
+        490,
+        500
+      ],
+      "title": "Load Product Image 1",
+      "type": "LoadImage",
+      "widgets_values": [
+        "c67fe24441845c7dd2d4358158e666af5582f03c3e49c40b60f27866db76c8df.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {},
+      "id": 12,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": [
+            3,
+            373
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": [],
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        330,
+        370
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1"
+      },
+      "size": [
+        490,
+        500
+      ],
+      "title": "Load Product Image 2",
+      "type": "LoadImage",
+      "widgets_values": [
+        "e863c242a33ffda794831b4c97c9270545a1da79b07a32a365fe5d860dab0734.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {},
+      "id": 23,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "value",
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 3,
+      "outputs": [
+        {
+          "links": [
+            8
+          ],
+          "localized_name": "INT",
+          "name": "INT",
+          "type": "INT"
+        }
+      ],
+      "pos": [
+        510,
+        960
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1"
+      },
+      "size": [
+        310,
+        90
+      ],
+      "title": "Number of Shots",
+      "type": "PrimitiveInt",
+      "widgets_values": [
+        3,
+        "fixed"
+      ]
+    },
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {},
+      "id": 22,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "value",
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 4,
+      "outputs": [
+        {
+          "links": [
+            7,
+            17
+          ],
+          "localized_name": "INT",
+          "name": "INT",
+          "type": "INT"
+        }
+      ],
+      "pos": [
+        160,
+        960
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1"
+      },
+      "size": [
+        300,
+        90
+      ],
+      "title": "Total Seconds (4-15)",
+      "type": "PrimitiveInt",
+      "widgets_values": [
+        9,
+        "fixed"
+      ]
+    },
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {},
+      "id": 200,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 5,
+      "outputs": [
+        {
+          "links": [
+            9
+          ],
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        970,
+        710
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1"
+      },
+      "size": [
+        420,
+        230
+      ],
+      "title": "User Story / Creative Direction (optional)",
+      "type": "PrimitiveStringMultiline",
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "flags": {
+        "collapsed": true
+      },
+      "id": 149,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 6,
+      "outputs": [
+        {
+          "links": [
+            11
+          ],
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        1470,
+        920
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1"
+      },
+      "size": [
+        225,
+        8
+      ],
+      "title": "System Prompt",
+      "type": "PrimitiveStringMultiline",
+      "widgets_values": [
+        "You are a creative director and video prompt specialist for high-end product ads. Your job is to analyze the provided product reference images and write ONE complete multi-shot video prompt for Seedance 2.0 (a reference-to-video model), in the sleek, editorial style of luxury product advertising (think Aesop, Dior, etc.).\n\n---\n\n## INPUT\nYou will receive:\n- Reference images. Image 1 is the hero/environment reference — its scene, surface, lighting, and atmosphere are the locked environment for the entire film. Any additional images are product detail references (label, texture, materials).\n- {N_SHOTS}: the number of distinct shots (1-6)\n- {N_SECONDS}: the total video duration in seconds (4-15). This is a hard constraint.\n- {USER_STORY}: optional creative direction. If provided, it overrides or augments your inferred vibe. If empty, rely entirely on your image analysis.\n\n---\n\n## STEP 1 — ANALYZE THE IMAGES\nBefore writing anything, internally assess from image 1 (cross-referencing detail images):\n- Product type, shape, color, material, and finish\n- Existing lighting mood (hard/soft, warm/cool, dramatic/flat)\n- Background environment — describe it precisely and literally: surface type, color, texture, depth, atmosphere. This becomes a locked constant for all shots.\n- Implied brand positioning (luxury, minimal, bold, clinical, artisanal, etc.)\n\n## STEP 2 — DEFINE THE STYLE FRAME\nDerive a set of locked style constants in the editorial product-film idiom:\n1. **One palette.** A single monochromatic or duotone color world derived from the product and image 1 (e.g. warm amber on near-black; sepia charcoal; cool blue-black). Every shot lives inside it.\n2. **One light.** A single motivated key light with deep, soft shadow falloff — chiaroscuro, not flat e-commerce lighting. Light can move, bloom, or sweep; it never multiplies.\n3. **One environment.** The scene from image 1, held constant. Seamless backdrop or minimal studio void. Never introduce new rooms, floors, or locations.\n4. **One material motif.** A single tactile material drawn from the product's story (its ingredient, texture, or context — e.g. wood shavings, stone, water, leather, silk, metal filings). It may appear as a macro landscape, as suspended fragments, or as a surface the product rests on — but it is ONE motif, reused, not a new prop per shot.\n5. **Suspended physics.** Levitation, slow rotation, fragments frozen or drifting mid-air, ultra-slow-motion — deliberate, weightless, controlled.\n\n## STEP 3 — ASSIGN A SHOT SEQUENCE\nMap {N_SHOTS} to an ad narrative arc:\n\n| Shot Role     | Purpose                                                  |\n|---------------|----------------------------------------------------------|\n| Hero (Shot 1) | Product reveal — slow, confident, emerging from darkness |\n| Detail        | Extreme macro of texture, material, label, or motif      |\n| Feature       | Product interacting with the material motif or light     |\n| Lifestyle     | Product in a wider, styled composition of its world      |\n| Outro         | Pull back, final beauty angle, settle into stillness     |\n\n- 1-2 shots: Hero + Outro only\n- 3 shots: Hero, Detail (or Feature), Outro\n- 4 shots: Hero, Detail, Feature, Outro\n- 5 shots: Hero, Detail, Feature, Lifestyle, Outro\n- 6 shots: Hero, Detail, Detail, Feature, Lifestyle, Outro\n\n## STEP 4 — ALLOCATE TIME\nSplit {N_SECONDS} across the shots as contiguous time segments starting at 0.0s:\n- Use increments of 0.5 seconds; segments must sum EXACTLY to {N_SECONDS}\n- No shot shorter than 1.0s\n- Luxury/cinematic vibe: favor a longer Hero and Outro, compress middle shots\n- Energetic/bold vibe: distribute evenly, keep every shot punchy\n\n## STEP 5 — WRITE THE PROMPT\nProduce one continuous prompt with this structure:\n1. An opening global-style paragraph: film type, the product (as \"the product from image 1\"), the locked palette, light, environment, and material motif, and the note that the environment from image 1 is constant throughout.\n2. One time-cued line per shot in the form `[start s - end s]`, beginning every shot after the first with \"Cut to\". Describe: camera angle and motion, subject action, how the light behaves, and how the motif participates. 25-60 words per shot.\n3. A final `Audio:` line - minimal ambient bed, subtle whoosh on cuts, delicate foley tied to the material motif, and a restrained musical gesture that resolves on the last shot. No voiceover, no lyrics.\n\nPrompt writing rules:\n- Present tense, descriptive and directive; lead with the most important visual element of each shot\n- Ground identity in the references: say \"the product from image 1\"; when a detail matters, cite its source (e.g. \"the label exactly as in image 2\")\n- Shot 1 opens on (or quickly reveals) the composition of image 1 before the camera begins to move\n- Vary angle, distance, and motion meaningfully between shots - at least one extreme macro when {N_SHOTS} >= 3\n- Camera vocabulary: slow push-in, glide, orbit, top-down descent, tilt reveal, drift back. One camera idea per shot.\n- No on-screen text, no logos, no titles, no graphics, no UI. No people unless {USER_STORY} asks for them.\n- The environment is a locked constant, not a creative variable. Never introduce new settings or weather.\n\n---\n\n## OUTPUT FORMAT\nOutput ONLY the final prompt text - no preamble, no explanation, no markdown fences, no quotes.\n\n---\n\n## EXAMPLES\nThese show the required structure, pacing, and quality bar. Do NOT copy their content - derive everything from the actual input images.\n\nExample (3 shots, 7 seconds, warm apothecary product):\n\nEditorial luxury product film. The dark amber glass bottle from image 1 in its original scene: a matte near-black surface fading into a warm brown void, one warm spotlight from upper left, fine atmospheric haze, deep soft shadows. Monochromatic amber-on-black palette. Material motif: dried cedar shavings. The environment from image 1 is constant throughout.\n[0.0s - 2.5s] The scene opens exactly on image 1, the bottle standing centered in near-darkness; the spotlight slowly blooms brighter as the camera pushes in from a low angle; thin curls of cedar shaving drift weightlessly around the bottle.\n[2.5s - 4.5s] Cut to an extreme macro: the camera glides low across a backlit landscape of cedar shavings, shallow depth of field, warm rim light tracing every curled edge, the blurred silhouette of the bottle rising in the background.\n[4.5s - 7.0s] Cut to a slow orbit: the bottle levitates a few centimeters above the surface, rotating gently, shavings frozen mid-air around it; the light sweeps once across the glass, the camera drifts back, and everything settles into stillness.\nAudio: low warm room tone, a soft airy whoosh on each cut, delicate dry rustle of cedar shavings, a single swelling ambient chord that resolves to silence on the final settle.\n\nExample (4 shots, 10 seconds, matte black tech product):\n\nEditorial tech product film. The matte black over-ear headphones from image 1 in their original scene: a charcoal studio void, one hard key light from camera right with long falloff, sepia-toned monochrome palette. Material motif: fine leather grain. The environment from image 1 is constant throughout.\n[0.0s - 3.0s] The scene opens on image 1 in heavy shadow; a blade of light sweeps slowly across the earcup, revealing the silhouette; the camera pushes in with almost imperceptible slowness.\n[3.0s - 5.5s] Cut to an extreme macro of the leather earpad grain from image 2, the texture rolling like dunes under raking sepia light, focus breathing gently across the stitching.\n[5.5s - 8.0s] Cut to an exploded view: the earcup components separate and float apart in ultra-slow motion, each part catching the key light in turn, suspended in the void.\n[8.0s - 10.0s] Cut to the fully assembled headphones levitating, a slow thirty-degree orbit as the parts settle home; the light dims until only the rim highlight remains.\nAudio: near-silent dark ambience, soft mechanical clicks as components separate and reseat, an airy whoosh on each cut, one low resonant synth swell that fades on the final rim light."
+      ]
+    },
+    {
+      "flags": {
+        "collapsed": true
+      },
+      "id": 81,
+      "inputs": [
+        {
+          "link": 7,
+          "localized_name": "input",
+          "name": "input",
+          "type": "*"
+        },
+        {
+          "link": 8,
+          "localized_name": "input_1",
+          "name": "input_1",
+          "type": "*"
+        },
+        {
+          "link": 9,
+          "localized_name": "user_story",
+          "name": "user_story",
+          "type": "STRING",
+          "widget": {
+            "name": "user_story"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 9,
+      "outputs": [
+        {
+          "links": [
+            10
+          ],
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        1170,
+        620
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "proxyWidgets": [
+          [
+            "85",
+            "replace"
+          ]
+        ],
+        "ver": "0.14.1"
+      },
+      "size": [
+        225,
+        36
+      ],
+      "type": "0e2c3eaa-706c-41fd-b300-b6bd9e84a0a4",
+      "widgets_values": []
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 164,
+      "inputs": [
+        {
+          "link": 10,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "label": "image_1",
+          "link": 1,
+          "localized_name": "model.images.image_1",
+          "name": "model.images.image_1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_2",
+          "link": 2,
+          "localized_name": "model.images.image_2",
+          "name": "model.images.image_2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_3",
+          "link": 3,
+          "localized_name": "model.images.image_3",
+          "name": "model.images.image_3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_4",
+          "link": null,
+          "localized_name": "model.images.image_4",
+          "name": "model.images.image_4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "audio_1",
+          "link": null,
+          "localized_name": "model.audio.audio_1",
+          "name": "model.audio.audio_1",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "video_1",
+          "link": null,
+          "localized_name": "model.video.video_1",
+          "name": "model.video.video_1",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "model.thinking_level",
+          "name": "model.thinking_level",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.thinking_level"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.temperature",
+          "name": "model.temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "model.temperature"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.top_p",
+          "name": "model.top_p",
+          "type": "FLOAT",
+          "widget": {
+            "name": "model.top_p"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.max_output_tokens",
+          "name": "model.max_output_tokens",
+          "type": "INT",
+          "widget": {
+            "name": "model.max_output_tokens"
+          }
+        },
+        {
+          "label": "files",
+          "link": null,
+          "localized_name": "model.files",
+          "name": "model.files",
+          "shape": 7,
+          "type": "GEMINI_INPUT_FILES"
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": 11,
+          "localized_name": "system_prompt",
+          "name": "system_prompt",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "system_prompt"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 10,
+      "outputs": [
+        {
+          "links": [
+            12
+          ],
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        1470,
+        370
+      ],
+      "properties": {
+        "Node name for S&R": "GeminiNodeV2"
+      },
+      "showAdvanced": false,
+      "size": [
+        360,
+        452
+      ],
+      "type": "GeminiNodeV2",
+      "widgets_values": [
+        "",
+        "Gemini 3.1 Pro",
+        "HIGH",
+        1,
+        0.95,
+        32768,
+        111,
+        "randomize",
+        ""
+      ]
+    },
+    {
+      "flags": {},
+      "id": 166,
+      "inputs": [
+        {
+          "link": 12,
+          "localized_name": "source",
+          "name": "source",
+          "type": "*"
+        }
+      ],
+      "mode": 0,
+      "order": 11,
+      "outputs": [
+        {
+          "links": [
+            367
+          ],
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        1870,
+        370
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1"
+      },
+      "size": [
+        530,
+        570
+      ],
+      "title": "Preview Generated Prompt",
+      "type": "PreviewAny",
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {},
+      "id": 165,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "value",
+          "name": "value",
+          "type": "STRING",
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 7,
+      "outputs": [
+        {
+          "links": [
+            14,
+            15
+          ],
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        2530,
+        500
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline"
+      },
+      "size": [
+        450,
+        330
+      ],
+      "title": "Prompt Input (copy/paste prompt here to make edits)",
+      "type": "PrimitiveStringMultiline",
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "flags": {
+        "collapsed": true
+      },
+      "id": 115,
+      "inputs": [
+        {
+          "link": 14,
+          "localized_name": "string_a",
+          "name": "string_a",
+          "type": "STRING",
+          "widget": {
+            "name": "string_a"
+          }
+        },
+        {
+          "link": 15,
+          "localized_name": "on_false",
+          "name": "on_false",
+          "type": "STRING"
+        },
+        {
+          "link": 367,
+          "localized_name": "on_true",
+          "name": "on_true",
+          "type": "STRING"
+        }
+      ],
+      "mode": 0,
+      "order": 12,
+      "outputs": [
+        {
+          "links": [
+            16
+          ],
+          "localized_name": "output",
+          "name": "output",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        2760,
+        400
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "proxyWidgets": [
+          [
+            "112",
+            "string_a"
+          ]
+        ],
+        "ver": "0.14.1"
+      },
+      "size": [
+        225,
+        36
+      ],
+      "type": "2b10af74-c412-4c88-b235-6b170aed965c",
+      "widgets_values": []
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 300,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": 16,
+          "localized_name": "prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": 17,
+          "localized_name": "duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "label": "image_1",
+          "link": 371,
+          "localized_name": "model.reference_images.image_1",
+          "name": "model.reference_images.image_1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_2",
+          "link": 372,
+          "localized_name": "model.reference_images.image_2",
+          "name": "model.reference_images.image_2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_3",
+          "link": 373,
+          "localized_name": "model.reference_images.image_3",
+          "name": "model.reference_images.image_3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_4",
+          "link": null,
+          "localized_name": "model.reference_images.image_4",
+          "name": "model.reference_images.image_4",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video_1",
+          "link": null,
+          "localized_name": "model.reference_videos.video_1",
+          "name": "model.reference_videos.video_1",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "audio_1",
+          "link": null,
+          "localized_name": "model.reference_audios.audio_1",
+          "name": "model.reference_audios.audio_1",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "asset_1",
+          "link": null,
+          "localized_name": "model.reference_assets.asset_1",
+          "name": "model.reference_assets.asset_1",
+          "shape": 7,
+          "type": "STRING"
+        },
+        {
+          "link": null,
+          "localized_name": "auto_downscale",
+          "name": "model.auto_downscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_downscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "auto_upscale",
+          "name": "model.auto_upscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_upscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 13,
+      "outputs": [
+        {
+          "links": [
+            18
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        3120,
+        370
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2ReferenceNode",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1"
+      },
+      "showAdvanced": false,
+      "size": [
+        420,
+        505
+      ],
+      "type": "ByteDance2ReferenceNode",
+      "widgets_values": [
+        "Seedance 2.0",
+        "",
+        "1080p",
+        "adaptive",
+        7,
+        true,
+        "",
+        true,
+        222,
+        "randomize",
+        false
+      ]
+    },
+    {
+      "flags": {},
+      "id": 89,
+      "inputs": [
+        {
+          "link": 18,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 14,
+      "outputs": [
+        {
+          "links": [],
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        3600,
+        370
+      ],
+      "properties": {
+        "Node name for S&R": "SaveVideo",
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1"
+      },
+      "size": [
+        560,
+        1150
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "bgcolor": "#000",
+      "color": "#222",
+      "flags": {},
+      "id": 308,
+      "inputs": [],
+      "mode": 0,
+      "order": 8,
+      "outputs": [],
+      "pos": [
+        -1530,
+        330
+      ],
+      "properties": {},
+      "size": [
+        630,
+        1180
+      ],
+      "title": "Workflow Instructions",
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "# Seedance 2.0: 1-Click Multishot\n\nSeedance 2.0 takes ONE prompt with time-cued shot segments.\n\n## How to use\n\n1. Upload your images. **Image 1 = hero/environment reference** (its scene is locked for\n   every shot). Images 2-3 are product detail references. Add more by wiring extra\n   Load Image nodes into the free slots on the Gemini and Seedance nodes - both grow\n   new inputs automatically as you connect.\n2. Set **Number of Shots** and **Total Seconds (4-15)**. Optionally type creative\n   direction into **User Story**.\n3. Run. Gemini 3.1 Pro writes one time-segmented, editorial-style prompt - read it in\n   **Preview Generated Prompt**.\n4. Not happy with the prompt? Copy/paste it into the **Prompt Input (copy/paste prompt\n   here to make edits)** node and change it manually. If there is ANY text in this node,\n   it is used as the Seedance prompt instead of Gemini's output (an If/Else switch under\n   the hood checks whether the node is empty). Clear the node to hand control back to\n   Gemini.\n\n## Seeds & execution flow (how ComfyUI decides what re-runs)\n\nComfyUI walks the graph and only executes a node when one of its inputs changed since\nthe last run - otherwise it reuses the cached result. A seed is just another input, so\nit's your handle on this:\n\n- **fixed** seed + nothing else changed -> the node is identical to last run, so it can\n  be skipped/cached. For API nodes (Gemini, Seedance) that means no new API call and no\n  new credits spent.\n- **randomize** -> the seed changes on every queue, so the node (and everything\n  downstream of it) re-runs every time.\n\nRecipes:\n\n- **Re-roll the prompt:** set the *Gemini* seed to randomize. New prompt -> Seedance's\n  input changed -> the video re-renders too.\n- **Same prompt, new video take:** keep the *Gemini* seed fixed (cached, no spend) and\n  randomize the *Seedance* seed. Only the video node re-runs.\n- **Repeatable run:** fix both seeds. Caveat: fixed seeds control *re-execution*, not\n  determinism - API models can still return slightly different output when they do run.\n- Typing into **Prompt Input** changes Seedance's input, so the video re-renders even\n  with a fixed seed. Same for changing Shots / Seconds / images upstream of Gemini.\n\n## Defaults\n\nSeedance 2.0 (full model) - 1080p - adaptive ratio - audio ON - watermark OFF - 9 seconds.\nTotal Seconds feeds the Seedance `duration` input directly, so the video length always\nmatches what Gemini was told to write for."
+      ]
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

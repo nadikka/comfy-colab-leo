@@ -1,0 +1,2139 @@
+{
+  "config": {},
+  "extra": {
+    "ds": {
+      "offset": [
+        1106.7872810755023,
+        1425.5334130927436
+      ],
+      "scale": 0.3752033029231296
+    },
+    "frontendVersion": "1.44.2"
+  },
+  "groups": [],
+  "id": "d677aa89-121c-4ad5-9bd3-e784f2424ed9",
+  "last_link_id": 30,
+  "last_node_id": 27,
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "VIDEO"
+    ],
+    [
+      2,
+      3,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      3,
+      4,
+      0,
+      1,
+      1,
+      "IMAGE"
+    ],
+    [
+      4,
+      5,
+      0,
+      6,
+      0,
+      "VIDEO"
+    ],
+    [
+      5,
+      4,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      6,
+      7,
+      0,
+      5,
+      1,
+      "IMAGE"
+    ],
+    [
+      7,
+      8,
+      0,
+      9,
+      0,
+      "VIDEO"
+    ],
+    [
+      8,
+      7,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      10,
+      0,
+      8,
+      1,
+      "IMAGE"
+    ],
+    [
+      10,
+      11,
+      0,
+      12,
+      0,
+      "VIDEO"
+    ],
+    [
+      11,
+      13,
+      0,
+      14,
+      0,
+      "VIDEO"
+    ],
+    [
+      12,
+      10,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      15,
+      0,
+      11,
+      1,
+      "IMAGE"
+    ],
+    [
+      14,
+      15,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      15,
+      16,
+      0,
+      13,
+      1,
+      "IMAGE"
+    ],
+    [
+      16,
+      17,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      17,
+      18,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      18,
+      19,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      20,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      20,
+      21,
+      0,
+      22,
+      0,
+      "VIDEO"
+    ],
+    [
+      21,
+      13,
+      0,
+      23,
+      0,
+      "VIDEO"
+    ],
+    [
+      22,
+      11,
+      0,
+      24,
+      0,
+      "VIDEO"
+    ],
+    [
+      23,
+      8,
+      0,
+      25,
+      0,
+      "VIDEO"
+    ],
+    [
+      24,
+      5,
+      0,
+      26,
+      0,
+      "VIDEO"
+    ],
+    [
+      25,
+      1,
+      0,
+      27,
+      0,
+      "VIDEO"
+    ],
+    [
+      26,
+      27,
+      0,
+      17,
+      0,
+      "IMAGE"
+    ],
+    [
+      27,
+      26,
+      0,
+      17,
+      1,
+      "IMAGE"
+    ],
+    [
+      28,
+      25,
+      0,
+      18,
+      1,
+      "IMAGE"
+    ],
+    [
+      29,
+      24,
+      0,
+      19,
+      1,
+      "IMAGE"
+    ],
+    [
+      30,
+      23,
+      0,
+      20,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "nodes": [
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 1,
+      "inputs": [
+        {
+          "link": 2,
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "type": "IMAGE"
+        },
+        {
+          "link": 3,
+          "localized_name": "last_frame",
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 6,
+      "outputs": [
+        {
+          "links": [
+            1,
+            25
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        15.739892963265675,
+        -753.1286760540279
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2FirstLastFrameNode"
+      },
+      "size": [
+        450,
+        400
+      ],
+      "type": "ByteDance2FirstLastFrameNode",
+      "widgets_values": [
+        "Seedance 2.0",
+        "extreme shot shifts as two character run and jump and make action poses, anime style, squash and stretch animation, calarts style, cartoon network style",
+        "1080p",
+        "16:9",
+        4,
+        false,
+        223429887,
+        "randomize",
+        false
+      ]
+    },
+    {
+      "flags": {
+        "collapsed": false
+      },
+      "id": 2,
+      "inputs": [
+        {
+          "link": 1,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 11,
+      "outputs": [],
+      "pos": [
+        -12.08212438306208,
+        -303.9700867752124
+      ],
+      "properties": {},
+      "size": [
+        520,
+        720
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.0_flf2v",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 3,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            2
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        359.8908610553321,
+        -1259.2860147773702
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        290,
+        370
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "071fa7bd73af8f2f1bd1bd39859db10e3f6ba36ff797ff489d0977464aedf99c.png",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 4,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            3,
+            5
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        1.2009828369177171,
+        -1210.7817107561145
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        290,
+        370
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "ddc0b5ea86a0b673a1b4874d522547b94a7977b43538866f47570175911307c4.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 5,
+      "inputs": [
+        {
+          "link": 5,
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "type": "IMAGE"
+        },
+        {
+          "link": 6,
+          "localized_name": "last_frame",
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 7,
+      "outputs": [
+        {
+          "links": [
+            4,
+            24
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        592.5445337049157,
+        -744.9011622437944
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2FirstLastFrameNode"
+      },
+      "size": [
+        450,
+        400
+      ],
+      "type": "ByteDance2FirstLastFrameNode",
+      "widgets_values": [
+        "Seedance 2.0",
+        "extreme shot shifts as two character run and jump and make action poses, anime style, squash and stretch animation, calarts style, cartoon network style",
+        "1080p",
+        "16:9",
+        4,
+        false,
+        1662723398,
+        "randomize",
+        false
+      ]
+    },
+    {
+      "flags": {
+        "collapsed": false
+      },
+      "id": 6,
+      "inputs": [
+        {
+          "link": 4,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 13,
+      "outputs": [],
+      "pos": [
+        571.9415020179458,
+        -277.76229444483306
+      ],
+      "properties": {},
+      "size": [
+        520,
+        720
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.0_flf2v",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 7,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": [
+            6,
+            8
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        743.7256385904261,
+        -1208.7507699762552
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        290,
+        370
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "0eb45d69987951bd57e0a75551f85566030bb4b9f92231c95b61e4566ef35c56.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 8,
+      "inputs": [
+        {
+          "link": 8,
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "type": "IMAGE"
+        },
+        {
+          "link": 9,
+          "localized_name": "last_frame",
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 8,
+      "outputs": [
+        {
+          "links": [
+            7,
+            23
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        1181.8049867426,
+        -750.0551063599657
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2FirstLastFrameNode"
+      },
+      "size": [
+        450,
+        400
+      ],
+      "type": "ByteDance2FirstLastFrameNode",
+      "widgets_values": [
+        "Seedance 2.0",
+        "extreme shot shifts as two character run and jump and make action poses, anime style, squash and stretch animation, calarts style, cartoon network style",
+        "1080p",
+        "16:9",
+        4,
+        false,
+        1366057492,
+        "randomize",
+        false
+      ]
+    },
+    {
+      "flags": {
+        "collapsed": false
+      },
+      "id": 9,
+      "inputs": [
+        {
+          "link": 7,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 15,
+      "outputs": [],
+      "pos": [
+        1166.5033293295357,
+        -259.47908011339086
+      ],
+      "properties": {},
+      "size": [
+        520,
+        720
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.0_flf2v",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 10,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 3,
+      "outputs": [
+        {
+          "links": [
+            9,
+            12
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        1157.7549410654904,
+        -1225.9303856126787
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        290,
+        370
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "f6f34a7fc9679385aae6dc1179c689938e9c2ccc747a6c562dfcd529a49465fe.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 11,
+      "inputs": [
+        {
+          "link": 12,
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "type": "IMAGE"
+        },
+        {
+          "link": 13,
+          "localized_name": "last_frame",
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 9,
+      "outputs": [
+        {
+          "links": [
+            10,
+            22
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        1785.8085862371452,
+        -741.5848855894908
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2FirstLastFrameNode"
+      },
+      "size": [
+        450,
+        400
+      ],
+      "type": "ByteDance2FirstLastFrameNode",
+      "widgets_values": [
+        "Seedance 2.0",
+        "extreme shot shifts as two character run and jump and make action poses, anime style, squash and stretch animation, calarts style, cartoon network style",
+        "1080p",
+        "16:9",
+        4,
+        false,
+        651642512,
+        "randomize",
+        false
+      ]
+    },
+    {
+      "flags": {
+        "collapsed": false
+      },
+      "id": 12,
+      "inputs": [
+        {
+          "link": 10,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 17,
+      "outputs": [],
+      "pos": [
+        1770.5065515541298,
+        -251.00846014618787
+      ],
+      "properties": {},
+      "size": [
+        520,
+        720
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.0_flf2v",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 13,
+      "inputs": [
+        {
+          "link": 14,
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "type": "IMAGE"
+        },
+        {
+          "link": 15,
+          "localized_name": "last_frame",
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 10,
+      "outputs": [
+        {
+          "links": [
+            11,
+            21
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        2362.300082944972,
+        -741.5848855894908
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2FirstLastFrameNode"
+      },
+      "size": [
+        450,
+        400
+      ],
+      "type": "ByteDance2FirstLastFrameNode",
+      "widgets_values": [
+        "Seedance 2.0",
+        "extreme shot shifts as two character run and jump and make action poses, anime style, squash and stretch animation, calarts style, cartoon network style",
+        "1080p",
+        "16:9",
+        4,
+        false,
+        167021654,
+        "randomize",
+        false
+      ]
+    },
+    {
+      "flags": {
+        "collapsed": false
+      },
+      "id": 14,
+      "inputs": [
+        {
+          "link": 11,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 19,
+      "outputs": [],
+      "pos": [
+        2346.997985552986,
+        -251.00876316614813
+      ],
+      "properties": {},
+      "size": [
+        520,
+        720
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.0_flf2v",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 15,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 4,
+      "outputs": [
+        {
+          "links": [
+            13,
+            14
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        1540.1847160518282,
+        -1255.8951456678333
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        290,
+        370
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "ce740d8131c3814d5d41b0f49429edb0b7d2d44750f375cf0168a3362887fb43.png",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 16,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 5,
+      "outputs": [
+        {
+          "links": [
+            15
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        1869.8554837558565,
+        -1262.606254984519
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        290,
+        370
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "4c0fa7ff8443dac937948a99e77668077f4650f1703213ca37712391285a5dce.png",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 17,
+      "inputs": [
+        {
+          "link": 26,
+          "localized_name": "image1",
+          "name": "image1",
+          "type": "IMAGE"
+        },
+        {
+          "link": 27,
+          "localized_name": "image2",
+          "name": "image2",
+          "type": "IMAGE"
+        }
+      ],
+      "mode": 0,
+      "order": 21,
+      "outputs": [
+        {
+          "links": [
+            16
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        188.26894116820785,
+        865.3914140974825
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ver": "0.3.76"
+      },
+      "size": [
+        225,
+        96
+      ],
+      "type": "ImageBatch",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 18,
+      "inputs": [
+        {
+          "link": 16,
+          "localized_name": "image1",
+          "name": "image1",
+          "type": "IMAGE"
+        },
+        {
+          "link": 28,
+          "localized_name": "image2",
+          "name": "image2",
+          "type": "IMAGE"
+        }
+      ],
+      "mode": 0,
+      "order": 22,
+      "outputs": [
+        {
+          "links": [
+            17
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        710.2906181961644,
+        882.7387007785455
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ver": "0.3.76"
+      },
+      "size": [
+        225,
+        96
+      ],
+      "type": "ImageBatch",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 19,
+      "inputs": [
+        {
+          "link": 17,
+          "localized_name": "image1",
+          "name": "image1",
+          "type": "IMAGE"
+        },
+        {
+          "link": 29,
+          "localized_name": "image2",
+          "name": "image2",
+          "type": "IMAGE"
+        }
+      ],
+      "mode": 0,
+      "order": 23,
+      "outputs": [
+        {
+          "links": [
+            18
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        1266.9239421238076,
+        857.1783610964426
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ver": "0.3.76"
+      },
+      "size": [
+        225,
+        96
+      ],
+      "type": "ImageBatch",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 20,
+      "inputs": [
+        {
+          "link": 18,
+          "localized_name": "image1",
+          "name": "image1",
+          "type": "IMAGE"
+        },
+        {
+          "link": 30,
+          "localized_name": "image2",
+          "name": "image2",
+          "type": "IMAGE"
+        }
+      ],
+      "mode": 0,
+      "order": 24,
+      "outputs": [
+        {
+          "links": [
+            19
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        1851.5189379114206,
+        820.1099293661737
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ver": "0.3.76"
+      },
+      "size": [
+        225,
+        96
+      ],
+      "type": "ImageBatch",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 21,
+      "inputs": [
+        {
+          "link": 19,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "audio",
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "link": null,
+          "localized_name": "fps",
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 25,
+      "outputs": [
+        {
+          "links": [
+            20
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        2652.1097935366925,
+        832.9917119005427
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ver": "0.3.76"
+      },
+      "size": [
+        270,
+        128
+      ],
+      "type": "CreateVideo",
+      "widgets_values": [
+        24
+      ]
+    },
+    {
+      "flags": {},
+      "id": 22,
+      "inputs": [
+        {
+          "link": 20,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 26,
+      "outputs": [],
+      "pos": [
+        3093.9199659621454,
+        -452.4997645559963
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ver": "0.3.76"
+      },
+      "size": [
+        1030,
+        1201.3125
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 23,
+      "inputs": [
+        {
+          "link": 21,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "mode": 0,
+      "order": 20,
+      "outputs": [
+        {
+          "links": [
+            30
+          ],
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO"
+        },
+        {
+          "links": null,
+          "localized_name": "fps",
+          "name": "fps",
+          "type": "FLOAT"
+        }
+      ],
+      "pos": [
+        2392.3584574872516,
+        562.7918435970732
+      ],
+      "properties": {
+        "Node name for S&R": "GetVideoComponents"
+      },
+      "size": [
+        225,
+        95.328125
+      ],
+      "type": "GetVideoComponents",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 24,
+      "inputs": [
+        {
+          "link": 22,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "mode": 0,
+      "order": 18,
+      "outputs": [
+        {
+          "links": [
+            29
+          ],
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO"
+        },
+        {
+          "links": null,
+          "localized_name": "fps",
+          "name": "fps",
+          "type": "FLOAT"
+        }
+      ],
+      "pos": [
+        1826.814124583593,
+        551.6358607426505
+      ],
+      "properties": {
+        "Node name for S&R": "GetVideoComponents"
+      },
+      "size": [
+        225,
+        95.328125
+      ],
+      "type": "GetVideoComponents",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 25,
+      "inputs": [
+        {
+          "link": 23,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "mode": 0,
+      "order": 16,
+      "outputs": [
+        {
+          "links": [
+            28
+          ],
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO"
+        },
+        {
+          "links": null,
+          "localized_name": "fps",
+          "name": "fps",
+          "type": "FLOAT"
+        }
+      ],
+      "pos": [
+        1199.1805978100112,
+        549.3242224730002
+      ],
+      "properties": {
+        "Node name for S&R": "GetVideoComponents"
+      },
+      "size": [
+        225,
+        95.328125
+      ],
+      "type": "GetVideoComponents",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 26,
+      "inputs": [
+        {
+          "link": 24,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "mode": 0,
+      "order": 14,
+      "outputs": [
+        {
+          "links": [
+            27
+          ],
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO"
+        },
+        {
+          "links": null,
+          "localized_name": "fps",
+          "name": "fps",
+          "type": "FLOAT"
+        }
+      ],
+      "pos": [
+        755.3643322414348,
+        545.055479287124
+      ],
+      "properties": {
+        "Node name for S&R": "GetVideoComponents"
+      },
+      "size": [
+        225,
+        95.328125
+      ],
+      "type": "GetVideoComponents",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 27,
+      "inputs": [
+        {
+          "link": 25,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        }
+      ],
+      "mode": 0,
+      "order": 12,
+      "outputs": [
+        {
+          "links": [
+            26
+          ],
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "audio",
+          "name": "audio",
+          "type": "AUDIO"
+        },
+        {
+          "links": null,
+          "localized_name": "fps",
+          "name": "fps",
+          "type": "FLOAT"
+        }
+      ],
+      "pos": [
+        119.3505864554408,
+        535.9911422112518
+      ],
+      "properties": {
+        "Node name for S&R": "GetVideoComponents"
+      },
+      "size": [
+        225,
+        95.328125
+      ],
+      "type": "GetVideoComponents",
+      "widgets_values": []
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

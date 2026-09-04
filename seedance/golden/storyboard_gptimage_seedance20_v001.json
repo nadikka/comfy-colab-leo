@@ -1,0 +1,581 @@
+{
+  "config": {},
+  "extra": {
+    "VHS_KeepIntermediate": true,
+    "VHS_MetadataImage": true,
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "ds": {
+      "offset": [
+        1383.2719864927644,
+        -7890.909939875414
+      ],
+      "scale": 0.4270651338330264
+    },
+    "frontendVersion": "1.41.13",
+    "linearData": {
+      "inputs": [
+        [
+          "361",
+          "image"
+        ],
+        [
+          "364",
+          "prompt"
+        ],
+        [
+          "347",
+          "model.resolution"
+        ],
+        [
+          "347",
+          "model.ratio"
+        ],
+        [
+          "347",
+          "model.duration"
+        ],
+        [
+          "347",
+          "model.generate_audio"
+        ]
+      ],
+      "outputs": [
+        "365",
+        "344"
+      ]
+    },
+    "linearMode": true,
+    "ue_links": [],
+    "workflowRendererVersion": "Vue-corrected"
+  },
+  "groups": [],
+  "id": "9994178c-856f-479e-8ba6-cda3daf4a117",
+  "last_link_id": 657,
+  "last_node_id": 367,
+  "links": [
+    [
+      643,
+      347,
+      0,
+      344,
+      0,
+      "VIDEO"
+    ],
+    [
+      653,
+      364,
+      0,
+      365,
+      0,
+      "IMAGE"
+    ],
+    [
+      655,
+      364,
+      0,
+      347,
+      7,
+      "IMAGE"
+    ],
+    [
+      656,
+      361,
+      0,
+      364,
+      0,
+      "IMAGE"
+    ],
+    [
+      657,
+      361,
+      0,
+      347,
+      6,
+      "IMAGE"
+    ]
+  ],
+  "nodes": [
+    {
+      "flags": {
+        "collapsed": false
+      },
+      "id": 344,
+      "inputs": [
+        {
+          "link": 643,
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMBO",
+          "widget": {
+            "name": "format"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "codec",
+          "name": "codec",
+          "type": "COMBO",
+          "widget": {
+            "name": "codec"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 4,
+      "outputs": [],
+      "pos": [
+        449.99449281211037,
+        8269.999761019213
+      ],
+      "properties": {},
+      "size": [
+        808.703125,
+        698.140625
+      ],
+      "type": "SaveVideo",
+      "widgets_values": [
+        "video/Seedance2.0_r2v",
+        "auto",
+        "auto"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 347,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.prompt",
+          "name": "model.prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "model.prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.ratio",
+          "name": "model.ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.duration",
+          "name": "model.duration",
+          "type": "INT",
+          "widget": {
+            "name": "model.duration"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.generate_audio",
+          "name": "model.generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.generate_audio"
+          }
+        },
+        {
+          "label": "image_1",
+          "link": 657,
+          "localized_name": "model.reference_images.image_1",
+          "name": "model.reference_images.image_1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_2",
+          "link": 655,
+          "localized_name": "model.reference_images.image_2",
+          "name": "model.reference_images.image_2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image_3",
+          "link": null,
+          "localized_name": "model.reference_images.image_3",
+          "name": "model.reference_images.image_3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "video_1",
+          "link": null,
+          "localized_name": "model.reference_videos.video_1",
+          "name": "model.reference_videos.video_1",
+          "shape": 7,
+          "type": "VIDEO"
+        },
+        {
+          "label": "audio_1",
+          "link": null,
+          "localized_name": "model.reference_audios.audio_1",
+          "name": "model.reference_audios.audio_1",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "asset_1",
+          "link": null,
+          "localized_name": "model.reference_assets.asset_1",
+          "name": "model.reference_assets.asset_1",
+          "shape": 7,
+          "type": "STRING"
+        },
+        {
+          "link": null,
+          "localized_name": "model.auto_downscale",
+          "name": "model.auto_downscale",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "model.auto_downscale"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 3,
+      "outputs": [
+        {
+          "links": [
+            643
+          ],
+          "localized_name": "VIDEO",
+          "name": "VIDEO",
+          "type": "VIDEO"
+        }
+      ],
+      "pos": [
+        -46.03545762348904,
+        8268.247804693077
+      ],
+      "properties": {
+        "Node name for S&R": "ByteDance2ReferenceNode"
+      },
+      "showAdvanced": true,
+      "size": [
+        423.5,
+        488.984375
+      ],
+      "type": "ByteDance2ReferenceNode",
+      "widgets_values": [
+        "Seedance 2.0",
+        "6 shots, 15 seconds total, 16:9 aspect ratio, cinematic stylized 3D animation.\n\n@Image1 is the character reference. Maintain exact appearance — proportions, outfit, colors, hairstyle, and facial features identical across every shot. The character in @Image1 is the protagonist of every shot.\n\n@Image2 is a 6-panel storyboard. Read it as a sequential narrative in standard reading order: top-left, top-middle, top-right, bottom-left, bottom-middle, bottom-right. Each panel is one shot. Animate the panels in order, generating the motion implied between them.\n\nFor each panel, interpret:\n- Shot type and framing (wide, medium, close-up, over-the-shoulder, low angle, etc.) — match it in the corresponding shot.\n- Character pose, expression, and body language — use these as the keyframe state for that shot.\n- Environment, lighting, and time of day — preserve across the shot, evolving naturally between shots if the storyboard implies a time shift.\n- Any secondary subjects, objects, or atmospheric elements — include them and animate them with believable motion.\n- Emotional tone — read the character's face and posture in each panel and carry that emotion through the shot.\n\nShot timing:\n- Shot 1 (0-2.5s): Panel 1 — establish. Slow camera move (dolly-in or gentle push). Hold the mood.\n- Shot 2 (2.5-5s): Panel 2 — first shift. Subtle motion, camera mostly steady.\n- Shot 3 (5-7.5s): Panel 3 — character reaction. Camera follows the character's attention (tilt, pan, or rack focus as the panel implies).\n- Shot 4 (7.5-10s): Panel 4 — escalation. More motion in the environment, camera reframes.\n- Shot 5 (10-12.5s): Panel 5 — turning point. The most dynamic shot — match the storyboard's framing exactly, then let it breathe.\n- Shot 6 (12.5-15s): Panel 6 — resolution. Slow, settled camera. End on a held frame, slow fade.\n\nStyle: Translate the storyboard's hand-drawn sketch aesthetic into full 3D — soft cel-shaded look, painterly background textures, subsurface lighting on the character. Preserve the storyboard's tonal palette and mood: if the panels are warm, render warm; if cool, render cool; if the lighting shifts across panels (e.g. day to night), animate that shift across the sequence.\n\nMotion guidance: Animate the transitions between panels as natural continuous action, not jump cuts. If panel 2 shows a character mid-stride and panel 3 shows them stopped, the shot should show the deceleration. Read the storyboard for implied motion — wind, falling objects, drifting elements, crowds, weather — and animate those with believable physics.\n\nConstraints: Maintain exact character appearance from @Image1 in every shot — no drift in face, outfit, or build. Follow @Image2 panel order strictly; do not reorder or skip beats. No fast cuts, no shaky camera, no text overlays, no added characters not present in the storyboard. If the storyboard depicts something stylized or symbolic (creatures, weather, atmospheric phenomena), render it faithfully rather than substituting a more realistic version.",
+        "720p",
+        "adaptive",
+        15,
+        true,
+        1077699876,
+        12321,
+        false,
+        false
+      ]
+    },
+    {
+      "flags": {},
+      "id": 361,
+      "inputs": [
+        {
+          "label": "Upload Image",
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            656,
+            657
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -1124.3982334724178,
+        8301.366939432583
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ue_properties": {
+          "input_ue_unconnectable": {},
+          "widget_ue_connectable": {}
+        },
+        "ver": "0.19.3"
+      },
+      "size": [
+        370,
+        410
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "4dd6cf05663744007c6d93487c30fdefa203c2b5e68c9f86667df93d5e2bd3cf.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 364,
+      "inputs": [
+        {
+          "link": 656,
+          "localized_name": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "mask",
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK"
+        },
+        {
+          "label": "Edit the \"User Prompt\" Section",
+          "link": null,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "quality",
+          "name": "quality",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "quality"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "background",
+          "name": "background",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "background"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "size",
+          "name": "size",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "size"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "n",
+          "name": "n",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "n"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            653,
+            655
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        -564.6614786159918,
+        8275.021245009662
+      ],
+      "properties": {
+        "Node name for S&R": "OpenAIGPTImage1",
+        "cnr_id": "comfy-core",
+        "ue_properties": {
+          "input_ue_unconnectable": {},
+          "version": "7.7",
+          "widget_ue_connectable": {}
+        },
+        "ver": "0.19.3"
+      },
+      "size": [
+        440,
+        630
+      ],
+      "type": "OpenAIGPTImage1",
+      "widgets_values": [
+        "\nUser Prompt: Make a story about this character walking through a city and getting gum stuck on her shoe with extreme camera angles.\n\nYou are a storyboard prompt writer for GPT-Image-2. Your job is to take a user's rough story idea and any reference images they provide, and output a single complete image generation prompt that produces a 6-panel sketch-style storyboard.\n\nINPUTS YOU WILL RECEIVE:\n- A text description from the user (may be vague, short, or unstructured — e.g. \"a kid finds a door in the woods\" or \"my character going through a breakup\")\n- Zero or more reference images (treat these as character references, style references, or environment references depending on what they show)\n\nYOUR PROCESS:\n\n1. Read the user's text. Identify:\n   - The main character (who)\n   - The core situation or change (what happens)\n   - The emotional arc (how the character feels at the start vs. the end)\n   - The setting (where)\n   If any of these are missing, invent something that fits the tone. Do not ask the user clarifying questions — commit to a direction.\n\n2. Expand the idea into a 6-beat story with a clear arc:\n   - Panel 1: Establish character, setting, and starting emotional state\n   - Panel 2: Inciting moment — something shifts, often subtle\n   - Panel 3: Character notices or reacts\n   - Panel 4: Escalation — the situation deepens\n   - Panel 5: Turning point — emotional or physical change\n   - Panel 6: Resolution — a quiet, landed ending (not necessarily happy, but settled)\n\n   Include at least one recurring visual motif (a prop, an object, a piece of clothing) that appears across multiple panels to anchor continuity.\n\n3. Assign reference images to roles:\n   - If one image is provided, label it as the character reference.\n   - If two are provided, label the first as character, second as style/environment — unless the images obviously suggest otherwise.\n   - If three or more, assign roles based on content (character / style / environment / supporting character).\n   - If no images are provided, omit the image reference section entirely and describe the character in the panel descriptions instead.\n\n4. Output the final prompt using exactly this structure:\n\n---\n\n[If images provided:]\nImage 1: [role] — [how to use it]\nImage 2: [role] — [how to use it]\n(etc.)\n\nGoal: A 6-panel sketch-style storyboard for short film pre-visualization.\n\nLayout: 2x3 grid, thin black panel borders, small white gutters between panels.\n\nStyle: Hand-drawn pencil sketch with visible construction lines, loose hatching, muted monochrome palette. [If style reference provided: Match the linework and tonal range from Image X.]\n\nStory: [2-3 sentence summary of the arc, including the emotional shift from start to end.]\n\nPanels (in reading order, left-to-right, top-to-bottom):\n\n- Panel 1: [Shot type]. [Visual description, including character action, setting, mood, lighting]. [Emotional state cue on character's face/body].\n- Panel 2: [Shot type]. [Visual description with the inciting shift]. [Where the recurring motif appears].\n- Panel 3: [Shot type]. [Character's reaction]. [Emotional shift visible].\n- Panel 4: [Shot type]. [Escalation]. [Motif continues].\n- Panel 5: [Shot type]. [Turning point — visual or emotional]. [Motif transformed or recontextualized].\n- Panel 6: [Shot type]. [Quiet resolution]. [Final state of motif]. [Final emotional state on character].\n\nConstraints: Keep character design consistent across all panels[, matching Image 1]. Show emotional progression on the character's face and body language: [list 4-6 progression states]. No text, no speech bubbles, no panel numbers visible. Hand-drawn aesthetic only — no clean digital lines, no color fills.\n\n---\n\nWRITING RULES:\n- Vary shot types across panels (wide, medium, close-up, over-the-shoulder, low angle, high angle). Don't repeat the same shot type twice in a row.\n- Each panel description should be 2-4 sentences. Specific over generic — \"she pauses at a chain-link fence\" beats \"she stops walking.\"\n- The recurring motif should appear in at least 3 of the 6 panels, ideally transforming in meaning across the arc.\n- The final panel must feel like an ending, not just the last in a sequence. Land it.\n- Match the tone of the user's input. Melancholy stays melancholy. Funny stays funny. Don't sand the edges off.\n- Do not output anything except the final prompt. No preamble, no explanation, no offer to revise.",
+        688509404,
+        "randomize",
+        "medium",
+        "auto",
+        "1536x1024",
+        1,
+        "gpt-image-2"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 365,
+      "inputs": [
+        {
+          "link": 653,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 2,
+      "outputs": [],
+      "pos": [
+        -553.7479990731154,
+        8999.715510412718
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ue_properties": {
+          "input_ue_unconnectable": {},
+          "version": "7.7",
+          "widget_ue_connectable": {}
+        },
+        "ver": "0.19.3"
+      },
+      "size": [
+        789.984375,
+        686.84375
+      ],
+      "type": "SaveImage",
+      "widgets_values": [
+        "gpt-image-2"
+      ]
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}
